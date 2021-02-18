@@ -33,8 +33,6 @@ router.post("/", asyncHandler(async (req, res, next) => {
 //   body: JSON.stringify({ credential: 'Demo-lition', password: 'password' })
 // }).then(res => res.json()).then(data => console.log(data));
 
-
-
 router.delete("/", (_req, res) => {
   res.clearCookie("token");
   return res.json({ message: "success" })
@@ -47,5 +45,14 @@ router.delete("/", (_req, res) => {
 //     "XSRF-TOKEN": `edTkDP2Q-LEVKNwjT05MqnW5QWVAHNlEsHEI`
 //   }
 // }).then(res => res.json()).then(data => console.log(data));
+
+router.get("/", restoreUser, (req, res) => {
+  const { user } = req;
+  if (user) {
+    return res.json({
+      user: user.toSafeObject()
+    });
+  } else return res.json({})
+})
 
 module.exports = router;
