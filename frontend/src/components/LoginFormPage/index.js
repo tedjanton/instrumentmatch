@@ -16,8 +16,6 @@ const LoginFormPage = () => {
   };
 
   const onSubmit = (e) => {
-    console.log("credential: ", credential);
-    console.log("password: ", password);
     e.preventDefault();
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password }))
