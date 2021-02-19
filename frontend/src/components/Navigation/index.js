@@ -22,9 +22,11 @@ const Navigation = ({ isLoaded }) => {
 
   return (
     <nav>
-      <div className="guitar-icon">
-        <i className="fas fa-guitar" />
-      </div>
+      <NavLink exact to="/">
+        <div className="nav-logo">
+          <i className="fas fa-guitar" />
+        </div>
+      </NavLink>
       <div className="nav-links">
         <ul className="nav-ul">
           <li className="nav-li">

@@ -32,9 +32,9 @@ const SignupFormPage = () => {
 
   return (
     <div className="signup-page-wrapper">
-      <h2 className="signup-h2">Sign Up</h2>
       <div id="signup-formContent">
         <form onSubmit={onSubmit} className="signup-form-wrapper">
+        <h2 className="signup-h2">Sign Up</h2>
           <div className="signup-errors">
             <ul className="signup-ul">
               {errors.map((error) => (

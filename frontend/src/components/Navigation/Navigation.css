@@ -2,13 +2,18 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d6d6d6;
+  background-color: whitesmoke;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.nav-logo {
+  margin: 16px;
 }
 
 .guitar-icon {
-  font-size: 1.5rem;
+  font-size: 30px;
   color: #3c6e71;
-  padding: 16px;
 }
 
 .nav-ul {
@@ -21,4 +26,8 @@ nav {
 
 .nav-li a {
   padding: .5em;
+}
+
+.user-menu-button {
+  border: none;
 }

@@ -30,7 +30,7 @@ const ProfileButton = ({ user }) => {
 
   return (
     <>
-      <button onClick={openMenu}>
+      <button className="user-menu-button" onClick={openMenu}>
         <i className="fas fa-user" />
       </button>
       {showMenu && (
