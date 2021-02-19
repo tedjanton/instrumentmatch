@@ -30,7 +30,7 @@ const Navigation = ({ isLoaded }) => {
       <div className="nav-links">
         <ul className="nav-ul">
           <li className="nav-li">
-            <NavLink exact to="/">Home</NavLink>
+            <NavLink exact to="/"></NavLink>
             {isLoaded && sessionLinks}
           </li>
         </ul>

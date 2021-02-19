@@ -30,15 +30,16 @@ const ProfileButton = ({ user }) => {
 
   return (
     <>
-      <button className="user-menu-button" onClick={openMenu}>
+      <button className="user-menu-buttons" onClick={openMenu}>
+        <i className="fas fa-bars" />
         <i className="fas fa-user" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+          <li className="nav-li-dropdown">{user.username}</li>
+          <li className="nav-li-dropdown">{user.email}</li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button className="logout-button" onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}
