@@ -32,17 +32,18 @@ const SignupFormPage = () => {
 
   return (
     <div className="signup-page-wrapper">
-      <h2>Sign Up</h2>
+      <h2 className="signup-h2">Sign Up</h2>
       <div id="signup-formContent">
         <form onSubmit={onSubmit} className="signup-form-wrapper">
           <div className="signup-errors">
-            <ul>
+            <ul className="signup-ul">
               {errors.map((error) => (
-                <li key={error}>{error}</li>
+                <li className="signup-li" key={error}>{error}</li>
                 ))}
             </ul>
           </div>
           <input
+            className="signup-input"
             type="text"
             name="username"
             value={username}
@@ -51,6 +52,7 @@ const SignupFormPage = () => {
             required
           />
           <input
+            className="signup-input"
             type="email"
             name="email"
             value={email}
@@ -59,6 +61,7 @@ const SignupFormPage = () => {
             required
           />
           <input
+            className="signup-input"
             type="password"
             name="password"
             value={password}
@@ -67,6 +70,7 @@ const SignupFormPage = () => {
             required
           />
           <input
+            className="signup-input"
             type="password"
             name="confirm-password"
             value={confirmPassword}
@@ -74,7 +78,7 @@ const SignupFormPage = () => {
             placeholder="Confirm Password"
             required
           />
-          <button type="submit">Sign Up</button>
+          <button className="signup-button" type="submit">Sign Up</button>
         </form>
       </div>
     </div>

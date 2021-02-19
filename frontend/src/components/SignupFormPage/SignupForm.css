@@ -4,7 +4,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-h2 {
+.signup-h2 {
   text-align: center;
   font-weight: 600;
   text-transform: uppercase;
@@ -50,18 +50,18 @@ h2 {
   font-size: 14px;
 }
 
-ul {
+.signup-ul {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
 }
 
-li {
+.signup-li {
   list-style: none;
   color: red;
 }
 
-button {
+.signup-button {
   background-color: #3c6e71;
   border: none;
   color: white;
@@ -84,23 +84,22 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.signup-button:hover {
   background-color: #315b5e;
 }
 
-input,
-label {
+.signup-input {
   display: flex;
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
-  /* padding: 15px; */
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 5px;
   width: 60%;
+  height: 3em;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -110,15 +109,11 @@ label {
   border-radius: 5px 5px 5px 5px;
 }
 
-input {
-  height: 3em;
-}
-
-input:focus {
+.signup-input:focus {
   background-color: #fff;
   border-bottom: 2px solid #315b5e;
 }
 
-input[type=text]:placeholder {
+.signup-input:placeholder {
   color: #cccccc;
 }

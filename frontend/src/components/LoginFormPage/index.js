@@ -27,17 +27,18 @@ const LoginFormPage = () => {
 
   return (
     <div className="login-page-wrapper">
-      <h2>Log In</h2>
+      <h2 className="login-h2">Log In</h2>
       <div id="login-formContent">
         <form onSubmit={onSubmit} className="login-form wrapper">
           <div className="login-errors">
-            <ul>
+            <ul className="login-ul">
               {errors.map((error) => (
-                <li key={error}>{error}</li>
+                <li className="login-li" key={error}>{error}</li>
                 ))}
             </ul>
           </div>
           <input
+            className="login-input"
             type="text"
             name="credential"
             value={credential}
@@ -46,6 +47,7 @@ const LoginFormPage = () => {
             required
           />
           <input
+            className="login-input"
             type="password"
             name="password"
             value={password}
@@ -53,7 +55,7 @@ const LoginFormPage = () => {
             placeholder="Password"
             required
           />
-          <button type="submit">Log In</button>
+          <button className="login-button" type="submit">Log In</button>
         </form>
       </div>
     </div>

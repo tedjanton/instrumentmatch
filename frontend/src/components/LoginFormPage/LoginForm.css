@@ -2,9 +2,16 @@ body {
   background-color: #d1d1d1;
   color: #EBEBEB;
   font-family: 'Montserrat', sans-serif;
+  background-image: url(../../images/homepage.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 
-h2 {
+.login-h2 {
   text-align: center;
   font-weight: 600;
   text-transform: uppercase;
@@ -50,18 +57,18 @@ h2 {
   font-size: 14px;
 }
 
-ul {
+.login-ul {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
 }
 
-li {
+.login-li {
   list-style: none;
   color: red;
 }
 
-button {
+.login-button {
   background-color: #3c6e71;
   border: none;
   color: white;
@@ -84,17 +91,15 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.login-button:hover {
   background-color: #315b5e;
 }
 
-input,
-label {
-  display: flex;
+.login-input {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
-  /* padding: 15px; */
+  height: 3em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -110,15 +115,11 @@ label {
   border-radius: 5px 5px 5px 5px;
 }
 
-input {
-  height: 3em;
-}
-
-input:focus {
+.login-input:focus {
   background-color: #fff;
   border-bottom: 2px solid #315b5e;
 }
 
-input[type=text]:placeholder {
+.login-input:placeholder {
   color: #cccccc;
 }
