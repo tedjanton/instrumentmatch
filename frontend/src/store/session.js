@@ -8,9 +8,8 @@ const setUser = user => ({
   user
 });
 
-const removeUser = user => ({
+const removeUser = () => ({
   type: REMOVE_USER,
-  user
 })
 
 export const login = (user) => async dispatch => {
@@ -41,6 +40,16 @@ export const signup = (user) => async dispatch => {
 
   const data = await res.json();
   dispatch(setUser(data.user));
+  return res;
+}
+
+export const logout = () => async dispatch => {
+  const res = await csrfFetch("/api/session", {
+    method: "DELETE"
+  })
+
+  const data = await res.json();
+  dispatch(removeUser());
   return res;
 }
 
