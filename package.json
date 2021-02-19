@@ -14,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tedjanton/Authenticate-Me.git"
+    "url": "git+https://github.com/tedjanton/instrumentmatch.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tedjanton/Authenticate-Me/issues"
+    "url": "https://github.com/tedjanton/instrumentmatch/issues"
   },
-  "homepage": "https://github.com/tedjanton/Authenticate-Me#readme"
+  "homepage": "https://github.com/tedjanton/instrumentmatch#readme"
 }
