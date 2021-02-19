@@ -26,9 +26,9 @@ const LoginFormPage = () => {
   }
 
   return (
-    <div className="wrapper">
+    <div className="login-page-wrapper">
       <h2>Log In</h2>
-      <div id="formContent">
+      <div id="login-formContent">
         <form onSubmit={onSubmit} className="login-form wrapper">
           <div className="login-errors">
             <ul>
@@ -37,33 +37,23 @@ const LoginFormPage = () => {
                 ))}
             </ul>
           </div>
-          <div className="login-credential">
-            <label htmlFor="credential">
-              <input
-                type="text"
-                name="credential"
-                value={credential}
-                onChange={(e) => setCredential(e.target.value)}
-                placeholder="Username or Email"
-                required
-              />
-            </label>
-          </div>
-          <div className="login-password">
-            <label htmlFor="password">
-              <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required
-              />
-            </label>
-          </div>
-          <div className="login-button">
-            <button type="submit">Log In</button>
-          </div>
+          <input
+            type="text"
+            name="credential"
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            placeholder="Username or Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Log In</button>
         </form>
       </div>
     </div>

@@ -31,10 +31,10 @@ const SignupFormPage = () => {
   }
 
   return (
-    <div className="wrapper">
+    <div className="signup-page-wrapper">
       <h2>Sign Up</h2>
-      <div id="formContent">
-        <form onSubmit={onSubmit} className="signup-form wrapper">
+      <div id="signup-formContent">
+        <form onSubmit={onSubmit} className="signup-form-wrapper">
           <div className="signup-errors">
             <ul>
               {errors.map((error) => (
@@ -42,57 +42,39 @@ const SignupFormPage = () => {
                 ))}
             </ul>
           </div>
-          <div className="signup-username">
-            <label htmlFor="username">
-              <input
-                type="text"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Enter a username"
-                required
-              />
-            </label>
-          </div>
-          <div className="signup-email">
-            <label htmlFor="email">
-              <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter an email"
-                required
-              />
-            </label>
-          </div>
-          <div className="signup-password">
-            <label htmlFor="password">
-              <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required
-              />
-            </label>
-          </div>
-          <div className="signup-confirm-password">
-            <label htmlFor="confirm-password">
-              <input
-                type="password"
-                name="confirm-password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Confirm password"
-                required
-              />
-            </label>
-          </div>
-          <div className="signup-button">
-            <button type="submit">Sign Up</button>
-          </div>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            name="confirm-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirm Password"
+            required
+          />
+          <button type="submit">Sign Up</button>
         </form>
       </div>
     </div>
