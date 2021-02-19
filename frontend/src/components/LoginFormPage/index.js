@@ -27,7 +27,7 @@ const LoginFormPage = () => {
 
   return (
     <div className="wrapper">
-      <h2>Welcome</h2>
+      <h2>Log In</h2>
       <div id="formContent">
         <form onSubmit={onSubmit} className="login-form wrapper">
           <div className="login-errors">
@@ -41,6 +41,7 @@ const LoginFormPage = () => {
             <label htmlFor="credential">
               <input
                 type="text"
+                name="credential"
                 value={credential}
                 onChange={(e) => setCredential(e.target.value)}
                 placeholder="Username or Email"
@@ -52,6 +53,7 @@ const LoginFormPage = () => {
             <label htmlFor="password">
               <input
                 type="password"
+                name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
