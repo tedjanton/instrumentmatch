@@ -16,6 +16,8 @@ function App() {
     .then(() => setIsLoaded(true));
   }, [dispatch])
 
+  
+
   return isLoaded && (
     <>
       <Navigation isLoaded={isLoaded}/>
