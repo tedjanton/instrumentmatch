@@ -8,8 +8,8 @@ nav {
 }
 
 .nav-logo {
-  margin: 16px 20px;
-  font-size: 40px;
+  margin: 16px 20px 16px 60px;
+  font-size: 32px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -21,7 +21,8 @@ nav {
   color: #3c6e71;
 }
 
-a:visited {
+a:visited,
+a:active {
   color: #353535;
 }
 
@@ -30,20 +31,28 @@ a:visited {
   color: #3c6e71;
 }
 
+.nav-links {
+  margin-right: 3%;
+}
+
 .nav-ul {
   padding: 0 1em;
 }
-
 
 .nav-li {
   list-style: none;
 }
 
 .user-menu-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: thin solid lightgray;
-  padding: 1em;
+  padding: .5em;
   border-radius: 21px;
   height: 42px;
+  width: 80px;
+  color: #353535;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -59,16 +68,19 @@ a:visited {
   outline: none;
 }
 
-.fa-bars,
-.fa-user {
-  /* margin: 1em; */
-  margin: 0 .7em;
+.fa-bars {
+  margin-left: .1em;
+  margin-top: .2em;
 }
 
+.fa-user-circle {
+  font-size: 24px;
+  margin-left: .5em;
+}
 .profile-dropdown {
   background-color: #ebebeb;
   position: absolute;
-  right: .1em;
+  right: 3.5%;
   color: black;
   padding: 1em;
   margin: 1.5em .8em;

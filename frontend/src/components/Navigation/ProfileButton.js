@@ -32,7 +32,7 @@ const ProfileButton = ({ user }) => {
     <>
       <button className="user-menu-buttons" onClick={openMenu}>
         <i className="fas fa-bars" />
-        <i className="fas fa-user" />
+        <i className="fas fa-user-circle" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
