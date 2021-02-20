@@ -21,6 +21,10 @@ nav {
   color: #3c6e71;
 }
 
+a:visited {
+  color: #353535;
+}
+
 .guitar-icon {
   font-size: 30px;
   color: #3c6e71;
@@ -49,6 +53,10 @@ nav {
 
 .user-menu-buttons:hover {
   box-shadow: 0 2px 10px 0  rgba(0,0,0,0.3);
+}
+
+.user-menu-buttons:focus {
+  outline: none;
 }
 
 .fa-bars,
