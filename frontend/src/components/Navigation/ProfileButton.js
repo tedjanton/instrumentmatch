@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 
 const ProfileButton = ({ user }) => {
@@ -10,6 +11,24 @@ const ProfileButton = ({ user }) => {
     if (showMenu) return;
     setShowMenu(true);
   };
+
+  let sessionLinks;
+  if (user) {
+    sessionLinks = (
+      <>
+        <li className="nav-li-dropdown">Welcome, {user.username}!</li>
+        <li className="nav-li-dropdown">{user.email}</li>
+        <span className="line"></span>
+      </>
+    )
+  } else {
+    sessionLinks = (
+      <>
+        <NavLink className="nav-li-dropdown" to="/login">Log In</NavLink>
+        <NavLink className="nav-li-dropdown" to="/signup">Sign Up</NavLink>
+      </>
+    )
+  }
 
   useEffect(() => {
     if (!showMenu) return;
@@ -36,11 +55,14 @@ const ProfileButton = ({ user }) => {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li className="nav-li-dropdown">{user.username}</li>
-          <li className="nav-li-dropdown">{user.email}</li>
-          <li>
-            <button className="logout-button" onClick={logout}>Log Out</button>
-          </li>
+          {sessionLinks}
+            {user && (
+              <li className="logout-button-container">
+                <button className="logout-button" onClick={logout}>
+                 Log Out
+                </button>
+              </li>
+            )}
         </ul>
       )}
     </>
