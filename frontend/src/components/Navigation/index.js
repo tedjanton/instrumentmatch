@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Redirect, NavLink } from "react-router-dom";
-import ProfileButton from "./ProfileButton";
+import LoginFormModal from "../LoginFormModal";
+import ProfileButton from "../ProfileButton";
 import "./Navigation.css";
 
 const Navigation = ({ isLoaded }) => {
@@ -13,6 +14,7 @@ const Navigation = ({ isLoaded }) => {
           <i className="fas fa-guitar" />
         </div>
       </NavLink>
+      <LoginFormModal />
       <div className="nav-links">
         <ul className="nav-ul">
           <li className="nav-li">
