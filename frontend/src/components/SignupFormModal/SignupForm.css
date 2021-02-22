@@ -14,14 +14,17 @@ body {
   color: #BD632F;
 }
 
-.signup-page-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+#signup-button-modal {
+  text-align: left;
+  padding-left: 1.5em;
+  background-color: #ebebeb;
 }
 
-#signup-formContent {
+#signup-button-modal:hover {
+  background-color: rgb(228, 228, 228);
+}
+
+/* #signup-formContent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,15 +39,15 @@ body {
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
-}
+} */
 
-.signup-form-wrapper {
+/* .signup-form-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .signup-errors {
   display: flex;

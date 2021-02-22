@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import LoginFormModal from "../LoginFormModal";
+import SignupFormModal from "../SignupFormModal";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
@@ -25,8 +26,8 @@ const ProfileButton = ({ user }) => {
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal setShowMenu={setShowMenu}/>
-        <NavLink className="nav-li-dropdown" to="/signup">Sign Up</NavLink>
+        <LoginFormModal setShowMenu={setShowMenu} />
+        <SignupFormModal setShowMenu={setShowMenu} />
       </>
     )
   }
@@ -37,9 +38,10 @@ const ProfileButton = ({ user }) => {
     const closeMenu = () => {
       setShowMenu(false);
     };
-
-    // document.addEventListener("click", closeMenu);
-
+    document.getElementById("close-menu")
+    .addEventListener("click", (e) => {
+      setShowMenu(false);
+    })
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
@@ -57,6 +59,9 @@ const ProfileButton = ({ user }) => {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
+          <li id="close-menu">
+            <button>x</button>
+          </li>
           {sessionLinks}
             {user && (
               <li className="logout-button-container">

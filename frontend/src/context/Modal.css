@@ -19,6 +19,16 @@
 }
 
 #modal-content {
-  position: absolute;
-  background-color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  margin: 4em;
+  text-align: center;
 }

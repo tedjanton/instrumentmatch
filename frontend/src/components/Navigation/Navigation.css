@@ -52,9 +52,6 @@ a.loggedout-dropdown {
   text-decoration: none;
 }
 
-a.loggedout-dropdown:hover {
-  background-color: rgb(228, 228, 228);
-}
 
 .user-menu-buttons {
   display: flex;
@@ -105,14 +102,17 @@ a.loggedout-dropdown:hover {
   box-shadow: -10px -5px 40px 1px rgba(0,0,0,0.2);
 }
 
+.profile-dropdown button {
+  font-size: 14px;
+  padding: .7em 0;
+  border: none;
+}
+
 .profile-dropdown li {
   list-style: none;
   font-size: 14px;
   padding: .7em 0;
-}
-
-.logout-button:hover {
-  background-color: #BD632F;
+  border: none;
 }
 
 .logout-button-container {
@@ -128,8 +128,8 @@ a.loggedout-dropdown:hover {
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
-  font-size: 12px;
-  /* width: 60%; */
+  font-size: 10px;
+  width: 60%;
   -webkit-box-shadow: 0 10px 30px 0 rgba(60, 110, 113, 0.4);
   box-shadow: 0 10px 30px 0 rgba(60, 110, 113, 0.4);
   -webkit-border-radius: 5px 5px 5px 5px;
@@ -141,6 +141,10 @@ a.loggedout-dropdown:hover {
   transition: all 0.3s ease-in-out;
 }
 
+.logout-button:hover {
+  background-color: #BD632F;
+}
+
 .line {
   padding-top: .5em;
   border-bottom: .1px solid rgba(158, 158, 158, 0.5);
@@ -148,4 +152,26 @@ a.loggedout-dropdown:hover {
 
 li.logout-button-container {
   padding-top: 1.5em;
+}
+
+li#close-menu {
+  text-align: right;
+  padding: 0;
+}
+li#close-menu button {
+  padding: .3em .7em;
+  background-color: #ebebeb;
+  font-size: 12px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  border: thin solid rgba(158, 158, 158, 0.5);
+  box-shadow: 0 10px 30px 0 rgba(60, 110, 113, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+li#close-menu button:hover {
+  background-color: #BD632F;
+  color: white;
 }

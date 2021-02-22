@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import './SignupForm.css';
 
-const SignupFormPage = () => {
+const SignupForm = ({ setShowMenu }) => {
   const sessionUser = useSelector(state => state.session.user);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -20,8 +20,13 @@ const SignupFormPage = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
-     setErrors([]);
-     return dispatch(sessionActions.signup({ email, username, password }))
+      setErrors([]);
+
+      setTimeout(() => {
+        setShowMenu(false);
+      }, 1000)
+      
+      return dispatch(sessionActions.signup({ email, username, password }))
         .catch(async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
@@ -85,4 +90,4 @@ const SignupFormPage = () => {
   )
 }
 
-export default SignupFormPage;
+export default SignupForm;
