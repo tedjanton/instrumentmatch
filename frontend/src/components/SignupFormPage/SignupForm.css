@@ -1,6 +1,6 @@
 body {
   background-color: #d1d1d1;
-  color: #EBEBEB;
+  color: #353535;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
 }
@@ -11,7 +11,7 @@ body {
   text-transform: uppercase;
   display:inline-block;
   margin: 40px 8px 10px 8px;
-  color: #3c6e71;
+  color: #BD632F;
 }
 
 .signup-page-wrapper {
@@ -63,7 +63,7 @@ body {
 }
 
 .signup-button {
-  background-color: #3c6e71;
+  background-color: #BD632F;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -86,7 +86,7 @@ body {
 }
 
 .signup-button:hover {
-  background-color: #315b5e;
+  background-color: #BD632F;
 }
 
 .signup-input {
@@ -112,7 +112,7 @@ body {
 
 .signup-input:focus {
   background-color: #fff;
-  border-bottom: 2px solid #315b5e;
+  border-bottom: 2px solid #BD632F;
 }
 
 .signup-input:placeholder {

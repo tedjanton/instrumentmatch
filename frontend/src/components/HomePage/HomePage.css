@@ -1,0 +1,30 @@
+.home-container {
+  background-image: url("../../images/guitar-black.jpg");
+  height: 500px;
+  background-attachment: local;
+  background-size: cover;
+  background-position: top;
+}
+
+.home-header > h1 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 100px;
+  max-width: 100px;
+  padding-top: 10%;
+  padding-left: 5%;
+  color: white;
+  line-height: .85em;
+}
+
+.home-explore-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin-top: 2.5em;
+  margin-left: 5%;
+  padding: .7em;
+  border: thin solid lightgray;
+  border-radius: 10px;
+}
