@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import LoginFormModal from "../LoginFormModal";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
@@ -24,8 +25,8 @@ const ProfileButton = ({ user }) => {
   } else {
     sessionLinks = (
       <>
-        <NavLink className="loggedout-dropdown" to="/login">Log In</NavLink>
-        <NavLink className="loggedout-dropdown" to="/signup">Sign Up</NavLink>
+        <LoginFormModal setShowMenu={setShowMenu}/>
+        <NavLink className="nav-li-dropdown" to="/signup">Sign Up</NavLink>
       </>
     )
   }
@@ -37,7 +38,7 @@ const ProfileButton = ({ user }) => {
       setShowMenu(false);
     };
 
-    document.addEventListener("click", closeMenu);
+    // document.addEventListener("click", closeMenu);
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
