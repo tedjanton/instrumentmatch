@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Instrument.associate = function(models) {
-    // associations can be defined here
+    Instrument.belongsTo(models.Owner, { foreignKey: "ownerId" })
   };
   return Instrument;
 };

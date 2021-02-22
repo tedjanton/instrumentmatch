@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Owner.associate = function(models) {
-    Owner.belongsTo(models.User, { foreignKey: "userId" })
+    Owner.belongsTo(models.User, { foreignKey: "userId" });
+    Owner.hasMany(models.Instrument, { foreignKey: "ownerId" })
   };
   return Owner;
 };
