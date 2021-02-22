@@ -42,13 +42,17 @@ a:active {
   list-style: none;
 }
 
-a.nav-li-dropdown {
+.nav-li-dropdown {
+  margin: 0 1em;
+}
+
+a.loggedout-dropdown {
   padding: 1em;
   font-size: 14px;
   text-decoration: none;
 }
 
-a.nav-li-dropdown:hover {
+a.loggedout-dropdown:hover {
   background-color: rgb(228, 228, 228);
 }
 
@@ -109,6 +113,10 @@ a.nav-li-dropdown:hover {
 
 .logout-button:hover {
   background-color: #BD632F;
+}
+
+.logout-button-container {
+  margin: 0 1em;
 }
 
 .logout-button {

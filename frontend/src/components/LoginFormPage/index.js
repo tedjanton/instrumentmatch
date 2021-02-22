@@ -28,7 +28,7 @@ const LoginFormPage = () => {
   return (
     <div className="login-page-wrapper">
       <div id="login-formContent">
-        <form onSubmit={onSubmit} className="login-form wrapper">
+        <form onSubmit={onSubmit} className="login-form-wrapper">
         <h2 className="login-h2">Log In</h2>
           <div className="login-errors">
             <ul className="login-ul">

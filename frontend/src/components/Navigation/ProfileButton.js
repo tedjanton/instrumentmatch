@@ -24,8 +24,8 @@ const ProfileButton = ({ user }) => {
   } else {
     sessionLinks = (
       <>
-        <NavLink className="nav-li-dropdown" to="/login">Log In</NavLink>
-        <NavLink className="nav-li-dropdown" to="/signup">Sign Up</NavLink>
+        <NavLink className="loggedout-dropdown" to="/login">Log In</NavLink>
+        <NavLink className="loggedout-dropdown" to="/signup">Sign Up</NavLink>
       </>
     )
   }

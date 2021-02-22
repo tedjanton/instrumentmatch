@@ -32,6 +32,7 @@ body {
   max-width: 450px;
   position: relative;
   padding: 0px;
+  margin: 4em;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
@@ -86,7 +87,7 @@ body {
 }
 
 .signup-button:hover {
-  background-color: #BD632F;
+  background-color: #97481a;
 }
 
 .signup-input {
