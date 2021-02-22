@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session"
 import { useDispatch } from "react-redux";
 import "./LoginForm.css"
 
-const LoginForm = () => {
+const LoginForm = ({ setShowMenu }) => {
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -12,6 +12,7 @@ const LoginForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+    setShowMenu(false);
     return dispatch(sessionActions.login({ credential, password }))
     .catch(async (res) => {
       const data = await res.json();
@@ -22,6 +23,7 @@ const LoginForm = () => {
   const onSubmitGuest = (e) => {
     e.preventDefault();
     setErrors([]);
+    setShowMenu(false);
     return dispatch(sessionActions.login({
       credential: "demo@user.io",
       password: "password"

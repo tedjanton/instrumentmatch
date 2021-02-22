@@ -45,6 +45,7 @@ const ProfileButton = ({ user }) => {
 
   const logout = e => {
     e.preventDefault();
+    setShowMenu(false);
     dispatch(sessionActions.logout());
   }
 

@@ -2,12 +2,7 @@ body {
   background-color: #d1d1d1;
   color: #353535;
   font-family: 'Montserrat', sans-serif;
-  /* background-image: url(../../images/homepage.jpg);
-  background-position: center;
-  background-size: cover; */
   position: relative;
-  /* background-repeat: no-repeat;
-  background-attachment: fixed; */
 }
 
 .login-h2 {

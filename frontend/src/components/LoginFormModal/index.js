@@ -13,7 +13,7 @@ function LoginFormModal({ setShowMenu }) {
           setShowModal(false)
           setShowMenu(false)
         }}>
-          <LoginForm />
+          <LoginForm setShowMenu={setShowMenu}/>
         </Modal>
       )}
     </>
