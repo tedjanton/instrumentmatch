@@ -1,9 +1,22 @@
 const router = require("express").Router();
+const asyncHandler = require("express-async-handler");
 const sessionRouter = require("./session");
 const usersRouter = require("./users");
+const instrumentsRouter = require("./instruments");
+const { Instrument } = require("../../db/models");
 
 router.use("/session", sessionRouter);
 router.use("/users", usersRouter);
+router.use("/instruments", instrumentsRouter);
+
+router.get("/", asyncHandler(async (_req, res) => {
+  const instruments = await Instrument.findAll({
+    order: ["createdAt", "DESC"]
+  });
+
+  res.json({ instruments });
+  
+}))
 
 module.exports = router;
 
