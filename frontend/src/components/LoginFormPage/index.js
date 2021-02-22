@@ -25,6 +25,18 @@ const LoginFormPage = () => {
     })
   }
 
+  const onSubmitGuest = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(sessionActions.login({
+      credential: "demo@user.io",
+      password: "password"
+    })).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors(data.errors);
+    })
+  }
+
   return (
     <div className="login-page-wrapper">
       <div id="login-formContent">
@@ -56,6 +68,15 @@ const LoginFormPage = () => {
             required
           />
           <button className="login-button" type="submit">Log In</button>
+          <div className="login-demo-wrapper">
+            <div className="line demo-line"></div>
+              <div className="login-demo-text">
+                <p>Don't have an account but want to try out the site?</p>
+              </div>
+            <button
+            className="login-button-demo"
+            onClick={(e) => onSubmitGuest(e)}>Guest Log In</button>
+          </div>
         </form>
       </div>
     </div>
