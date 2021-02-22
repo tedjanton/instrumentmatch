@@ -25,7 +25,7 @@ const ProfileButton = ({ user }) => {
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
+        <LoginFormModal setShowMenu={setShowMenu}/>
         <NavLink className="nav-li-dropdown" to="/signup">Sign Up</NavLink>
       </>
     )
@@ -38,7 +38,7 @@ const ProfileButton = ({ user }) => {
       setShowMenu(false);
     };
 
-    document.addEventListener("click", closeMenu);
+    // document.addEventListener("click", closeMenu);
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);

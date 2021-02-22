@@ -14,7 +14,6 @@ const Navigation = ({ isLoaded }) => {
           <i className="fas fa-guitar" />
         </div>
       </NavLink>
-      <LoginFormModal />
       <div className="nav-links">
         <ul className="nav-ul">
           <li className="nav-li">
