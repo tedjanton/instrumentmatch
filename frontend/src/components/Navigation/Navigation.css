@@ -3,7 +3,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: #ebebeb;
-  margin-bottom: 4rem;
   width: 100%;
 }
 
@@ -18,7 +17,7 @@ nav {
 }
 
 .nav-logo:hover {
-  color: #3c6e71;
+  color: #BD632F;
 }
 
 a:visited,
@@ -28,7 +27,7 @@ a:active {
 
 .guitar-icon {
   font-size: 30px;
-  color: #3c6e71;
+  color: #BD632F;
 }
 
 .nav-links {
@@ -41,6 +40,16 @@ a:active {
 
 .nav-li {
   list-style: none;
+}
+
+a.nav-li-dropdown {
+  padding: 1em;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+a.nav-li-dropdown:hover {
+  background-color: rgb(228, 228, 228);
 }
 
 .user-menu-buttons {
@@ -61,7 +70,7 @@ a:active {
 }
 
 .user-menu-buttons:hover {
-  box-shadow: 0 2px 10px 0  rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px 0  rgba(0,0,0,0.3);
 }
 
 .user-menu-buttons:focus {
@@ -78,29 +87,32 @@ a:active {
   margin-left: .5em;
 }
 .profile-dropdown {
+  display: flex;
+  flex-direction: column;
   background-color: #ebebeb;
   position: absolute;
   right: 3.5%;
   color: black;
-  padding: 1em;
-  margin: 1.5em .8em;
+  padding: 1em 0;
+  margin: .4em .8em;
+  width: 200px;
   text-align: left;
   border-radius: 5%;
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: -10px -5px 40px 1px rgba(0,0,0,0.2);
 }
 
 .profile-dropdown li {
   list-style: none;
-  font-size: 12px;
-  margin: 1em 0;
+  font-size: 14px;
+  padding: .7em 0;
 }
 
 .logout-button:hover {
-  background-color: #315b5e;
+  background-color: #BD632F;
 }
 
 .logout-button {
-  background-color: #3c6e71;
+  background-color: #BD632F;
   border: none;
   color: white;
   padding: 1em 2em;
@@ -119,4 +131,13 @@ a:active {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.line {
+  padding-top: .5em;
+  border-bottom: .1px solid rgba(158, 158, 158, 0.5);
+}
+
+li.logout-button-container {
+  padding-top: 1.5em;
 }
