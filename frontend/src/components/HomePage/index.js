@@ -13,6 +13,13 @@ const HomePage = () => {
   const instruments = useSelector(state => state.home.instruments);
   const dispatch = useDispatch();
 
+  const featured = instruments?.filter(feature => feature.id < 4);
+
+  console.log(featured);
+
+  // let image = instruments[0]?.Images?.find(image => image.id === 1);
+  // console.log(image);
+
   useEffect( () => {
     dispatch(homeActions.getInstruments());
   }, [])
@@ -33,12 +40,10 @@ const HomePage = () => {
         </div>
       </div>
       <div className="home-featured-container">
-        {instruments && (
-          <>
-            <Featured instrument={instruments[0]} />
-            <Featured instrument={instruments[1]} />
-            <Featured instrument={instruments[2]} />
-          </>
+        { featured && (
+          featured.map(feature => (
+            <Featured key={feature.id} instrument={feature} />
+          ))
         )}
       </div>
     </>
