@@ -1,9 +1,9 @@
 .home-container {
   background-image: url("../../images/guitar-black.jpg");
-  height: 500px;
+  height: 480px;
   background-attachment: local;
   background-size: cover;
-  background-position: top;
+  background-position: center;
 }
 
 .home-header > h1 {
@@ -27,4 +27,57 @@ h1 {
   padding: .7em;
   border: thin solid lightgray;
   border-radius: 10px;
+}
+
+.home-featured {
+  margin-bottom: 4em;
+}
+
+.home-featured-title {
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+.home-featured-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 3%;
+}
+
+.feature-item-container {
+  width: 280px;
+  max-height: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  border-radius: 17px;
+}
+
+.featured-item-image {
+  overflow: hidden;
+  background-color: white;
+  background-position: center;
+}
+
+.featured-item {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.feature-container {
+  margin: .5em;
+}
+
+.feature-item-title {
+  margin: 0;
+}
+
+.feature-item-subtitle {
+  font-size: 14px;
+  margin: .2em 0 .5em 0;
 }

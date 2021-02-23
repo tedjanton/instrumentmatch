@@ -9,16 +9,10 @@ import Featured from "./Featured";
 
 const HomePage = () => {
   const history = useHistory();
-  const sessionUser = useSelector(state => state.session.user);
   const instruments = useSelector(state => state.home.instruments);
   const dispatch = useDispatch();
 
-  const featured = instruments?.filter(feature => feature.id < 4);
-
-  console.log(featured);
-
-  // let image = instruments[0]?.Images?.find(image => image.id === 1);
-  // console.log(image);
+  const featured = instruments?.filter(feature => feature.id < 5);
 
   useEffect( () => {
     dispatch(homeActions.getInstruments());
@@ -39,12 +33,15 @@ const HomePage = () => {
 
         </div>
       </div>
-      <div className="home-featured-container">
-        { featured && (
-          featured.map(feature => (
-            <Featured key={feature.id} instrument={feature} />
-          ))
-        )}
+      <div className="home-featured">
+        <h2 className="home-featured-title">Featured Instruments</h2>
+          <div className="home-featured-container">
+          {featured && (
+            featured.map(feature => (
+             <Featured key={feature.id} instrument={feature} />
+            ))
+          )}
+        </div>
       </div>
     </>
   )

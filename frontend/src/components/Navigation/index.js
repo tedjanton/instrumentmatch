@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import ProfileButton from "../ProfileButton";
+import Search from "../Search";
 import "./Navigation.css";
 
 const Navigation = ({ isLoaded }) => {
@@ -13,6 +14,9 @@ const Navigation = ({ isLoaded }) => {
           <i className="fas fa-guitar" />
         </div>
       </NavLink>
+      <div className="nav-search">
+        <Search />
+      </div>
       <div className="nav-links">
         <ul className="nav-ul">
           <li className="nav-li">

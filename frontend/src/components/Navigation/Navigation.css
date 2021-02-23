@@ -4,6 +4,7 @@ nav {
   align-items: center;
   background-color: #ebebeb;
   width: 100%;
+  height: 80px;
 }
 
 .nav-logo {
@@ -17,7 +18,7 @@ nav {
 }
 
 .nav-logo:hover {
-  color: #BD632F;
+  color: #bd921d;
 }
 
 a:visited,
@@ -27,7 +28,7 @@ a:active {
 
 .guitar-icon {
   font-size: 30px;
-  color: #BD632F;
+  color: #bd921d;
 }
 
 .nav-links {
@@ -71,7 +72,7 @@ a.loggedout-dropdown {
 }
 
 .user-menu-buttons:hover {
-  box-shadow: 0 2px 5px 0  rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
 }
 
 .user-menu-buttons:focus {
@@ -95,7 +96,7 @@ a.loggedout-dropdown {
   right: 3.5%;
   color: black;
   padding: 1em 0;
-  margin: .4em .8em;
+  margin: .8em .8em;
   width: 200px;
   text-align: left;
   border-radius: 5%;
@@ -120,7 +121,7 @@ a.loggedout-dropdown {
 }
 
 .logout-button {
-  background-color: #BD632F;
+  background-color: #bd921d;
   border: none;
   color: white;
   padding: 1em 2em;
@@ -142,7 +143,7 @@ a.loggedout-dropdown {
 }
 
 .logout-button:hover {
-  background-color: #BD632F;
+  background-color: #bd921d;
 }
 
 .line {
@@ -172,6 +173,6 @@ li#close-menu button {
 }
 
 li#close-menu button:hover {
-  background-color: #BD632F;
+  background-color: #bd921d;
   color: white;
 }

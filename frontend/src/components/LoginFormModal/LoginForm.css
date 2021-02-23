@@ -21,7 +21,7 @@ body {
   text-transform: uppercase;
   display:inline-block;
   margin: 40px 8px 10px 8px;
-  color: #BD632F;
+  color: #bd921d;
 }
 
 .login-errors {
@@ -44,7 +44,7 @@ body {
 
 .login-button,
 .login-button-demo {
-  background-color: #BD632F;
+  background-color: #bd921d;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -106,7 +106,7 @@ body {
 
 .login-input:focus {
   background-color: #fff;
-  border-bottom: 2px solid #315b5e;
+  border-bottom: 2px solid #97481a;
 }
 
 .login-input:placeholder {
