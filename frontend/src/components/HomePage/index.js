@@ -8,14 +8,12 @@ import { useEffect } from "react";
 
 const HomePage = () => {
   const sessionUser = useSelector(state => state.session.user);
+  const instruments = useSelector(state => state.home.instruments);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect( () => {
     dispatch(homeActions.getInstruments());
-  }, []);
-
-  const instruments = useSelector(state => state.home.instruments);
-  console.log(instruments);
+  }, [])
 
   return (
     <>
@@ -26,6 +24,11 @@ const HomePage = () => {
         <div className="home-explore-container">
           <button className="home-explore-button">Explore nearby instruments</button>
         </div>
+      </div>
+      <div className="home-featured-container">
+        <p>{instruments[0].name}</p>
+        <p>{instruments[1].name}</p>
+        <p>{instruments[2].name}</p>
       </div>
     </>
   )

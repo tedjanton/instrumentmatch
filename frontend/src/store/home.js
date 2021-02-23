@@ -13,10 +13,12 @@ export const getInstruments = () => async dispatch => {
   dispatch(load(instruments));
 };
 
-const homeReducer = (state = {}, action) => {
+const initialState = { instruments: [""] }
+
+const homeReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD:
-      return { ...state, ...action.instruments };
+      return {...state, ...action.instruments};
     default:
       return state;
   }
