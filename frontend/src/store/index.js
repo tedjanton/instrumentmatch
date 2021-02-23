@@ -4,8 +4,8 @@ import sessionReducer from "./session";
 import homeReducer from "./home";
 
 const rootReducer = combineReducers({
+  home: homeReducer,
   session: sessionReducer,
-  home: homeReducer
 })
 
 let enhancer;
