@@ -11,11 +11,10 @@ router.use("/instruments", instrumentsRouter);
 
 router.get("/", asyncHandler(async (_req, res) => {
   const instruments = await Instrument.findAll({
-    order: ["createdAt", "DESC"]
+    order: ["createdAt"]
   });
 
-  res.json({ instruments });
-  
+  return res.json({ instruments });
 }))
 
 module.exports = router;

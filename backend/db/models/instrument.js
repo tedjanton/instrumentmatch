@@ -2,51 +2,51 @@
 module.exports = (sequelize, DataTypes) => {
   const Instrument = sequelize.define('Instrument', {
     ownerId: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: { model: "Owners" }
     },
     familyId: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: { model: "Families" }
     },
     name: {
-      type: DataType.STRING(100),
+      type: DataTypes.STRING(100),
       allowNull: false,
     },
     manufacturer: {
-      type: DataType.STRING(50),
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     lastServiced: {
-      type: DataType.ENUM(["< 6m", "6m - 1yr", "1yr - 2yrs", "> 2yrs"]),
+      type: DataTypes.ENUM(["< 6m", "6m - 1yr", "1yr - 2yrs", "> 2yrs"]),
       allowNull: false,
     },
     description: {
-      type: DataType.TEXT
+      type: DataTypes.TEXT
     },
     pricePerDay: {
-      type: DataType.DECIMAL(5, 2),
+      type: DataTypes.DECIMAL(5, 2),
       allowNull: false,
     },
     address_1: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     address_2: {
-      type: DataType.STRING
+      type: DataTypes.STRING
     },
     city: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     state: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     zip: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {});

@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
-import { Redirect, NavLink } from "react-router-dom";
-import LoginFormModal from "../LoginFormModal";
+import { NavLink } from "react-router-dom";
 import ProfileButton from "../ProfileButton";
 import "./Navigation.css";
 

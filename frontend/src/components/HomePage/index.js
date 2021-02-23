@@ -1,10 +1,21 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import * as homeActions from "../../store/home"
+import * as sessionActions from "../../store/session"
+
 import "./HomePage.css";
+import { useEffect } from "react";
 
 const HomePage = () => {
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(homeActions.getInstruments());
+  }, []);
+
+  const instruments = useSelector(state => state.home.instruments);
+  console.log(instruments);
 
   return (
     <>
