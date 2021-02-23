@@ -8,7 +8,7 @@ const load = instruments => ({
 })
 
 export const getInstruments = () => async dispatch => {
-  const res = await csrfFetch("/api");
+  const res = await fetch("/api");
   const instruments = await res.json();
   dispatch(load(instruments));
 };
