@@ -2,12 +2,13 @@ import MapContainer from "../MapContainer";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import * as instrumentActions from "../../store/instrument"
+import * as instrumentActions from "../../store/instrument";
+import InstrumentGrid from "./InstrumentGrid";
 
 const InstrumentBrowser = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const instruments = useSelector(state => state.instrument.instruments)
+  const instruments = useSelector(state => state.instrument.instruments);
 
   const markers = instruments?.map(i => `${i.address_1} ${i.city} ${i.state} ${i.zip}`);
 
@@ -17,9 +18,13 @@ const InstrumentBrowser = () => {
   }, [])
 
   return (
-    <div>
-      <h2>Instrument Browser</h2>
-      <MapContainer markers={markers}/>
+    <div className="instrument-browser-container">
+      <div className="instrument-grid-container">
+        <InstrumentGrid instruments={instruments} />
+      </div>
+      <div className="instrument-map-container">
+        <MapContainer markers={markers}/>
+      </div>
     </div>
   )
 }

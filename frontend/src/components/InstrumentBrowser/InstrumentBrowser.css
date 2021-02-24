@@ -1,0 +1,23 @@
+.instrument-browser-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.instrument-grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 3%;
+}
+
+.instrument-container {
+  max-width: 280px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  border-radius: 17px;
+}
