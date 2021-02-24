@@ -38,10 +38,10 @@
 
 #search-button {
   position: relative;
-  right: 13%;
+  right: 12%;
   border-radius: 50%;
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   border: none;
   color: white;
   background-color: #bd921d;

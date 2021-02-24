@@ -1,9 +1,9 @@
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
+require("dotenv").config();
 
 const MapContainer = ({ markers }) => {
 
-  // const geocoder = new google.maps.Geocoder();
+  console.log(process.env);
 
 
   const mapStyles = {
@@ -16,7 +16,7 @@ const MapContainer = ({ markers }) => {
 
   return (
      <LoadScript
-       googleMapsApiKey=''>
+       googleMapsApiKey={process.env.REACT_APP_API_KEY_GOOGLE_MAPS}>
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}

@@ -42,7 +42,8 @@
     ]
   },
   "devDependencies": {
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "dotenv": "^8.2.0"
   },
   "proxy": "http://localhost:5000"
 }
