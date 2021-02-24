@@ -57,6 +57,13 @@ module.exports = (sequelize, DataTypes) => {
     Instrument.hasMany(models.Rental, { foreignKey: "instrumentId" });
     Instrument.hasMany(models.Review, { foreignKey: "instrumentId" });
 
+    const columnMapping = {
+      through: "Owner",
+      foreignKey: "ownerId",
+      otherKey: "userId"
+    }
+
+    Instrument.belongsTo(models.User, columnMapping);
   };
   return Instrument;
 };

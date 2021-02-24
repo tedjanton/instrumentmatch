@@ -7,7 +7,7 @@ import "./HomePage.css";
 
 const HomePage = () => {
   const history = useHistory();
-  const instruments = useSelector(state => state.instrument.instruments);
+  const instruments = useSelector(state => state.instruments.instruments);
   const dispatch = useDispatch();
 
   const featured = instruments?.filter(feature => feature.id < 5);

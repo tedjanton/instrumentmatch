@@ -8,9 +8,9 @@ const load = instruments => ({
   instruments
 })
 
-const loadOne = instrument => ({
+const loadOne = (selected) => ({
   type: LOAD_ONE,
-  instrument
+  selected
 })
 
 export const getInstruments = () => async dispatch => {
@@ -21,10 +21,10 @@ export const getInstruments = () => async dispatch => {
 
 export const getOneInstrument = (id) => async dispatch => {
   const res = await csrfFetch(`/api/instruments/${id}`);
-  const instrument = await res.json();
+  const selected = await res.json();
 
   if (res.ok) {
-    dispatch(loadOne(instrument));
+    dispatch(loadOne(selected));
   }
 }
 
@@ -33,7 +33,7 @@ const instrumentReducer = (state = {}, action) => {
     case LOAD:
       return {...state, ...action.instruments};
     case LOAD_ONE:
-      return {...state, ...action.instrument}
+      return {...state, selected: action.selected.instrument}
     default:
       return state;
   }

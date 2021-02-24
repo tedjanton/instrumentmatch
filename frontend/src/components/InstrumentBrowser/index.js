@@ -8,7 +8,7 @@ import InstrumentGrid from "./InstrumentGrid";
 const InstrumentBrowser = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const instruments = useSelector(state => state.instrument.instruments);
+  const instruments = useSelector(state => state.instruments.instruments);
 
   const markers = instruments?.map(i => `${i.address_1} ${i.city} ${i.state} ${i.zip}`);
 

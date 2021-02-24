@@ -4,7 +4,7 @@ import sessionReducer from "./session";
 import instrumentReducer from "./instrument";
 
 const rootReducer = combineReducers({
-  instrument: instrumentReducer,
+  instruments: instrumentReducer,
   session: sessionReducer,
 })
 

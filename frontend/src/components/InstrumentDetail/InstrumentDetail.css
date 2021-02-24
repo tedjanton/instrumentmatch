@@ -1,0 +1,48 @@
+.idp-header {
+  margin-left: 5%;
+}
+
+h2 {
+  margin: 1em 0 0 0;
+  font-weight: 600;
+}
+
+.idp-subtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.idp-note {
+  max-height: 1em;
+  width: 1.2em;
+  margin-right: .2em;
+  padding-bottom: 3px;
+}
+
+.idp-rating {
+  font-weight: 600;
+  padding: 0 .2em;
+}
+
+.idp-num-reviews {
+  margin-right: .5em;
+}
+
+.idp-city-state {
+  margin-left: .5em;
+}
+
+.idp-images-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 400px;
+  max-width: 100%;
+  margin: 1em 5%;
+}
+
+.idp-image-div img {
+  max-height: auto;
+  max-width: 100%;
+}
