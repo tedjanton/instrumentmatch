@@ -54,6 +54,8 @@ module.exports = (sequelize, DataTypes) => {
     Instrument.belongsTo(models.Owner, { foreignKey: "ownerId" });
     Instrument.belongsTo(models.Family, { foreignKey: "familyId"})
     Instrument.hasMany(models.Image, { foreignKey: "instrumentId" });
+    Instrument.hasMany(models.Rental, { foreignKey: "instrumentId" });
+    Instrument.hasMany(models.Review, { foreignKey: "instrumentId" });
 
   };
   return Instrument;
