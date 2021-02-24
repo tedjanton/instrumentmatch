@@ -13,7 +13,6 @@ const InstrumentBrowser = () => {
   const markers = instruments?.map(i => `${i.address_1} ${i.city} ${i.state} ${i.zip}`);
 
   useEffect(() => {
-    if (instruments) return;
     dispatch(instrumentActions.getInstruments());
   }, [])
 

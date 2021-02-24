@@ -3,9 +3,6 @@ require("dotenv").config();
 
 const MapContainer = ({ markers }) => {
 
-  console.log(process.env);
-
-
   const mapStyles = {
     height: "500px",
     width: "500px"};

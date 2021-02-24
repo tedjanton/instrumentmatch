@@ -6,7 +6,7 @@ const InstrumentGrid = ({ instruments }) => {
     <div>
       {instruments && (
         instruments.map(instr => (
-          <div className="instrument-container">
+          <div key={instr.id} className="instrument-container">
             <div className="instrument-item-image">
               <Link to={`/instruments/${instr.id}`}>
                   <img className="instrument-item" src={`${instr.Images[0].imgSrc}`} />
