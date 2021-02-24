@@ -1,21 +1,19 @@
-import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import * as homeActions from "../../store/home"
-import * as sessionActions from "../../store/session"
-
-import "./HomePage.css";
 import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import * as instrumentActions from "../../store/instrument"
 import Featured from "./Featured";
+import "./HomePage.css";
 
 const HomePage = () => {
   const history = useHistory();
-  const instruments = useSelector(state => state.home.instruments);
+  const instruments = useSelector(state => state.instrument.instruments);
   const dispatch = useDispatch();
 
   const featured = instruments?.filter(feature => feature.id < 5);
 
-  useEffect( () => {
-    dispatch(homeActions.getInstruments());
+  useEffect(() => {
+    dispatch(instrumentActions.getInstruments());
   }, [])
 
   return (

@@ -1,6 +1,6 @@
 import { csrfFetch } from "./csrf";
 
-const LOAD = "home/GET_INSTRUMENTS";
+const LOAD = "instrument/LOAD";
 
 const load = instruments => ({
   type: LOAD,
@@ -13,9 +13,9 @@ export const getInstruments = () => async dispatch => {
   dispatch(load(instruments));
 };
 
-const initialState = { instruments: [""] }
+// const initialState = { instruments: [""] }
 
-const homeReducer = (state = initialState, action) => {
+const instrumentReducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD:
       return {...state, ...action.instruments};
@@ -24,4 +24,4 @@ const homeReducer = (state = initialState, action) => {
   }
 }
 
-export default homeReducer;
+export default instrumentReducer;

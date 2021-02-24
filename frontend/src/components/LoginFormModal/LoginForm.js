@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import * as homeActions from "../../store/home";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css"
 
@@ -14,7 +13,6 @@ const LoginForm = ({ setShowMenu }) => {
     e.preventDefault();
     setErrors([]);
     setShowMenu(false);
-    // dispatch(homeActions.getInstruments());
     return dispatch(sessionActions.login({ credential, password }))
     .catch(async (res) => {
       const data = await res.json();

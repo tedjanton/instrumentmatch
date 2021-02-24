@@ -1,3 +1,4 @@
+
 .search-input {
   position: relative;
   display: flex;
@@ -9,7 +10,7 @@
   text-align: left;
   text-decoration: none;
   display: inline-block; font-size: 14px;
-  margin: 5px 5px 5px 30px;
+  margin: 5px 5px 5px 60px;
   width: 16em;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -37,7 +38,7 @@
 
 #search-button {
   position: relative;
-  right: 15%;
+  right: 14%;
   border-radius: 50%;
   height: 35px;
   width: 35px;
