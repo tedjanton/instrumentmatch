@@ -1,6 +1,4 @@
-.idp-container {
-  /* position: relative; */
-}
+
 
 .idp-header {
   margin-left: 5%;
@@ -14,6 +12,21 @@ h2 {
 .idp-subtitle {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.idp-host-subtitle {
+  padding: 0 0 2em 0;
+  border-bottom: thin solid rgba(0, 0, 0, 0.1);
+}
+
+.idp-host-subtitle > p {
+  margin: 0;
+}
+
+.idp-details-family,
+.idp-serviced {
+  display: flex;
   align-items: center;
 }
 
@@ -38,23 +51,65 @@ h2 {
 }
 
 .idp-images-container {
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-height: 400px;
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 5vw);
+  grid-gap: 10px;
   margin: 1em 5%;
 }
 
 .idp-image-div img {
-  max-height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.idp-image-div:hover > .overlay {
+  opacity: .5;
+}
+
+.image-0 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+.image-1 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.image-2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+.idp-image-div img {
   max-width: 100%;
+  object-fit: cover;
+}
+
+.idp-lower-grid {
+  margin: 0 2%;
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
 
 .idp-host-details {
   margin: 2% 5%;
 }
+
+img.instrument-icon,
+.fa-tools {
+  max-height: 22px;
+  padding-right: 1em;
+}
+
 
 .idp-date-picker {
   display: flex;
@@ -68,7 +123,6 @@ h2 {
 }
 
 #open-cal {
-  /* margin-right: 18%; */
   background-color: #bd921d;
   border: none;
   color: white;
@@ -100,11 +154,53 @@ h2 {
   background: none;
   border: none;
   text-decoration: underline;
-  color: grey;
+  margin: .5em;
 }
 
 button:focus {
   outline: none;
+}
+
+.calendar-header {
+  position: aboslute;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1em;
+  border-radius: 20px 20px 0 0;
+  border: thin solid rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+}
+
+.price,
+.reviews {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.price-num {
+  font-weight: 600;
+  font-size: 25px;
+  padding-right: 5px;
+  margin: 0 0 6px 0;
+}
+
+.cal-note {
+  max-height: 1em;
+  width: 1.2em;
+  margin-right: .2em;
+  padding-bottom: 3px;
+}
+
+.cal-rating {
+  font-weight: 600;
+  padding: 0 .2em;
+}
+
+.cal-num-reviews {
+  margin-right: .5em;
 }
 
 .calendar-container {
@@ -117,7 +213,9 @@ button:focus {
 }
 
 .react-calendar {
-  border: none;
+  border: thin solid rgba(0, 0, 0, 0.3);
   padding: 1em;
   border-radius: 0 0 20px 20px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
 }
