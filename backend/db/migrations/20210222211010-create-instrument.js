@@ -27,7 +27,7 @@ module.exports = {
         allowNull: false,
       },
       lastServiced: {
-        type: Sequelize.ENUM(["< 6m", "6m - 1yr", "1yr - 2yrs", "> 2yrs"]),
+        type: Sequelize.ENUM(["less than 6 months", "between 6 months and a year", "between 1 and 2 years", "longer than 2 years"]),
         allowNull: false,
       },
       description: {

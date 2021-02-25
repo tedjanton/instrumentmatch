@@ -1,3 +1,7 @@
+.idp-container {
+  /* position: relative; */
+}
+
 .idp-header {
   margin-left: 5%;
 }
@@ -34,6 +38,7 @@ h2 {
 }
 
 .idp-images-container {
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -45,4 +50,74 @@ h2 {
 .idp-image-div img {
   max-height: auto;
   max-width: 100%;
+}
+
+.idp-host-details {
+  margin: 2% 5%;
+}
+
+.idp-date-picker {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.idp-check-avail-button {
+  z-index: 15;
+  margin-right: 5.75%;
+}
+
+#open-cal {
+  /* margin-right: 18%; */
+  background-color: #bd921d;
+  border: none;
+  color: white;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  width: 350px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#open-cal:hover {
+  background-color: #966f04;
+}
+
+#close-cal {
+  display: flex;
+  justify-content: center;
+}
+
+#close-cal button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: grey;
+}
+
+button:focus {
+  outline: none;
+}
+
+.calendar-container {
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  right: 4%;
+  padding: 1em;
+  height: 600px;
+}
+
+.react-calendar {
+  border: none;
+  padding: 1em;
+  border-radius: 0 0 20px 20px;
 }

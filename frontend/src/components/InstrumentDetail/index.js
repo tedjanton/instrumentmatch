@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getOneInstrument } from "../../store/instrument";
+import CalendarComponent from "./CalendarComponent";
 import note from "../../images/music-note.png";
 import calcRating from "../../utils";
 import "./InstrumentDetail.css";
@@ -46,11 +47,14 @@ const InstrumentDetail = () => {
       </div>
       <div className="idp-host-details">
         <div className="idp-host-title">
-          <h3>{`This instruments owned by ${instrument?.User?.firstName}`}</h3>
+          <h3>{`This instrument is owned by ${instrument?.User?.firstName}`}</h3>
         </div>
         <div className="idp-host-subtitle">
-          <p>Last serviced less than 6 months ago</p>
+          <p>{`Last serviced ${instrument?.lastServiced} ago.`}</p>
         </div>
+      </div>
+      <div className="idp-date-picker">
+        <CalendarComponent instrument={instrument} />
       </div>
     </div>
   )

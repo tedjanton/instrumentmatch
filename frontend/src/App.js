@@ -1,13 +1,13 @@
-
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
+import 'react-dates/initialize';
 import * as sessionActions from "./store/session";
-// import LoginFormPage from "./components/LoginFormPage";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import InstrumentBrowser from "./components/InstrumentBrowser";
 import InstrumentDetail from "./components/InstrumentDetail";
+
 
 function App() {
   const dispatch = useDispatch();
