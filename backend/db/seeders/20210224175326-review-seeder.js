@@ -18,6 +18,17 @@ module.exports = {
       { userId: 1, instrumentId: 3, review: "My son dropped his instrument out in the snow, and I desperately needed to find a replacement for him. This worked great, and I'm lucky it was avaiable when I needed it!", rating: 5 },
       { userId: 1, instrumentId: 5, review: "Solid choice for someone in a pinch.", rating: 5 },
       { userId: 12, instrumentId: 3, review: "Took a little getting used to since I usually play another make of this instument, but still worked well for what I needed to do with it.", rating: 4 },
+      { userId: 11, instrumentId: 4, review: "Just ok.", rating: 3 },
+      { userId: 9, instrumentId: 3, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 4, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 5, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 6, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 7, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 8, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 9, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 10, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 11, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
+      { userId: 9, instrumentId: 3, review: "This is one of the best instruments I have every played. 100% would recommend!", rating: 5 },
 
     ], {});
   },

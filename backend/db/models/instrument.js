@@ -49,6 +49,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    lat: {
+      type: DataTypes.DECIMAL(7, 4),
+      allowNull: false
+    },
+    lng: {
+      type: DataTypes.DECIMAL(7, 4),
+      allowNull: false
+    },
   }, {});
   Instrument.associate = function(models) {
     Instrument.belongsTo(models.Owner, { foreignKey: "ownerId" });

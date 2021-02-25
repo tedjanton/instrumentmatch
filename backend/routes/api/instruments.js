@@ -1,5 +1,6 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
+const NodeGeocoder = require("node-geocoder");
 const { User, Owner, Rental, Review, Family, Instrument, Image } = require("../../db/models");
 
 const router = express.Router();
@@ -35,7 +36,6 @@ router.post("/:id/rental", asyncHandler(async (req, res) => {
 
   return res.json({ rental })
 }))
-
 
 
 module.exports = router;
