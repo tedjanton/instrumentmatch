@@ -40,11 +40,11 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
     setShowCal(true);
   }
 
-  const addDays = (date, days) => {
-    let result = new Date(date);
-    result.setDate(result.getDate() + days);
-    return result;
-  }
+  // const addDays = (date, days) => {
+  //   let result = new Date(date);
+  //   result.setDate(result.getDate() + days);
+  //   return result;
+  // }
 
   const onClick = (e) => {
     e.preventDefault();
@@ -53,7 +53,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
       userId: sessionUser.id,
       instrumentId: instrument.id,
       rentalStartDate: value[0],
-      rentalEndDate: addDays(value[1], 1)
+      rentalEndDate: value[1]
     }
     if (sessionUser) {
       setShowCal(false);

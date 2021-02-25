@@ -7,6 +7,8 @@ import './SignupForm.css';
 const SignupForm = ({ setShowMenu }) => {
   const sessionUser = useSelector(state => state.session.user);
   const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -22,11 +24,7 @@ const SignupForm = ({ setShowMenu }) => {
     if (password === confirmPassword) {
       setErrors([]);
 
-      setTimeout(() => {
-        setShowMenu(false);
-      }, 1000)
-      
-      return dispatch(sessionActions.signup({ email, username, password }))
+      return dispatch(sessionActions.signup({ username, firstName, lastName, email, password }))
         .catch(async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
@@ -54,6 +52,24 @@ const SignupForm = ({ setShowMenu }) => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
+            required
+          />
+          <input
+            className="signup-input"
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="First Name"
+            required
+          />
+          <input
+            className="signup-input"
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            placeholder="Last Name"
             required
           />
           <input

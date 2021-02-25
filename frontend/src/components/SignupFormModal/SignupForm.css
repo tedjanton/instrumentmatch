@@ -51,7 +51,7 @@ body {
 
 .signup-errors {
   display: flex;
-  text-align: center;
+  justify-content: center;
   font-size: 14px;
 }
 
@@ -60,6 +60,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
+  text-align: center;
 }
 
 .signup-li {
