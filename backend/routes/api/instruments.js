@@ -11,7 +11,31 @@ router.get("/:id", asyncHandler(async (req, res) => {
   });
 
   return res.json({ instrument })
+}));
+
+router.get("/:id/reviews", asyncHandler(async (req, res) => {
+  const instrumentId = req.params.id;
+  const reviews = await Review.findAll({
+    where: { instrumentId },
+    include: User
+  });
+
+  return res.json({ reviews });
 }))
+
+router.post("/:id/rental", asyncHandler(async (req, res) => {
+  const { userId, instrumentId, rentalStartDate, rentalEndDate } = req.body;
+
+  const rental = await Rental.create({
+    userId,
+    instrumentId,
+    rentalStartDate,
+    rentalEndDate
+  });
+
+  return res.json({ rental })
+}))
+
 
 
 module.exports = router;

@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getOneInstrument } from "../../store/instrument";
 import CalendarComponent from "./CalendarComponent";
+import Reviews from "./Reviews";
 import note from "../../images/music-note.png";
 import calcRating, { getIcon } from "../../utils";
 import "./InstrumentDetail.css";
@@ -34,11 +35,14 @@ const InstrumentDetail = () => {
         <div className="idp-subtitle">
           <img className="idp-note" src={note} />
           <p className="idp-rating">{currRating}</p>
-          <p className="idp-num-reviews">{`(${ratings?.length > 1 ? "reviews" : "review"})`}</p>
+          <p className="idp-num-reviews">
+            {`(${ratings?.length > 1 ? "reviews" : "review"})`}
+            </p>
           <p>{`•`}</p>
           <Link
             to="/instruments"
-            className="idp-city-state">{`${instrument?.city}, ${instrument?.state}`}
+            className="idp-city-state">
+              {`${instrument?.city}, ${instrument?.state}`}
           </Link>
         </div>
       </div>
@@ -77,6 +81,12 @@ const InstrumentDetail = () => {
             currRating={currRating}
             ratings={ratings} />
         </div>
+      </div>
+      <div className="idp-reviews-containter">
+      <Reviews
+            instrument={instrument}
+            currRating={currRating}
+            ratings={ratings} />
       </div>
     </div>
   )
