@@ -57,11 +57,11 @@ module.exports = {
         allowNull: false,
       },
       lat: {
-        type: Sequelize.DECIMAL(7, 4),
+        type: Sequelize.NUMERIC(7, 4),
         allowNull: false
       },
       lng: {
-        type: Sequelize.DECIMAL(7, 4),
+        type: Sequelize.NUMERIC(7, 4),
         allowNull: false
       },
       createdAt: {

@@ -3,7 +3,7 @@ const asyncHandler = require("express-async-handler");
 const sessionRouter = require("./session");
 const usersRouter = require("./users");
 const instrumentsRouter = require("./instruments");
-const { Instrument, Image } = require("../../db/models");
+const { Instrument, Image, Review } = require("../../db/models");
 const { singlePublicFileUpload, singleMulterUpload } = require("../../awsS3");
 
 router.use("/session", sessionRouter);
@@ -12,7 +12,7 @@ router.use("/instruments", instrumentsRouter);
 
 router.get("/", asyncHandler(async (_req, res) => {
   const instruments = await Instrument.findAll({
-    include: Image,
+    include: [Review, Image],
     order: ["createdAt"]
   });
 

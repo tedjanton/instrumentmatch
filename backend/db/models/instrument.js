@@ -50,11 +50,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     lat: {
-      type: DataTypes.DECIMAL(7, 4),
+      type: DataTypes.NUMERIC(7, 4),
       allowNull: false
     },
     lng: {
-      type: DataTypes.DECIMAL(7, 4),
+      type: DataTypes.NUMERIC(7, 4),
       allowNull: false
     },
   }, {});
