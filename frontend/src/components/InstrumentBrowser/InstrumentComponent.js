@@ -14,6 +14,7 @@ const InstrumentComponent = ({ location }) => {
     <div onClick={handleClick}>
       <div>
         <span>{name}</span>
+        <span></span>
       </div>
 
     </div>

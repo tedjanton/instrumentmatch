@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as instrumentActions from "../../store/instrument";
 import InstrumentComponent from "./InstrumentComponent";
+import "./InstrumentBrowser.css";
 
 const InstrumentBrowser = () => {
   const history = useHistory();
@@ -38,7 +39,7 @@ const InstrumentBrowser = () => {
         ))}
       </div>
       <div className="instrument-map-container">
-        <MapContainer markers={markers}/>
+        <MapContainer locations={locations}/>
       </div>
     </div>
   )
