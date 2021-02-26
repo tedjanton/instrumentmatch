@@ -14,8 +14,6 @@ const InstrumentComponent = ({ instrument }) => {
     history.push(`/instruments/${id}`)
   }
 
-  console.log(selected);
-
   const handleHover = () => {
     setSelected(instrument);
     dispatch(getHover(selected));
