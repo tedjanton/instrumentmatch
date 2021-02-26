@@ -25,18 +25,19 @@ const InstrumentComponent = ({ instrument }) => {
 
   return (
     <div
+      className="instrument-component-container"
       onClick={handleClick}
       onMouseEnter={handleHover}
-      onMouseLeave={handleHover}>
-      <div className="instrument-header">
-        <div className="instrument-image-container">
-          <div className="instrument-image-div">
-            <img src={imgSrc.imgSrc} />
-          </div>
-        </div>
-        <span>{`${manufacturer} ${name}`}</span>
-        <span></span>
+      onMouseLeave={handleHover}
+      >
+      <div className="instrument-image-div">
+        <img src={imgSrc.imgSrc} />
       </div>
+      <div className="instrument-title">
+        <span>{`${manufacturer} ${name}`}</span>
+      </div>
+      <span></span>
+
 
     </div>
   )

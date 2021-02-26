@@ -39,7 +39,6 @@ const InstrumentBrowser = () => {
         <div className="instrument-grid-title">
           <h3>Instruments to rent near you.</h3>
         </div>
-
         {locations.map(location => (
           <InstrumentComponent key={location.id} instrument={location} />
         ))}
