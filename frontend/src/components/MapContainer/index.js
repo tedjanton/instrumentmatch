@@ -1,39 +1,30 @@
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { useEffect } from "react";
-import Markers from "./Markers";
+import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
+import { useEffect, useState } from "react";
 require("dotenv").config();
 
 const MapContainer = ({ locations }) => {
-  let map = document.getElementById("map");
-  let markers = []
+  const map = document.getElementById("map");
+  const [selected, setSelected] = useState({});
+  let markers = [];
 
   locations.forEach(location => {
     let coord = { lat: location.lat, lng: location.lng }
     let marker = {
       id: location.id,
       name: location.name,
+      imgSrc: location.imgSrc,
       coordinates: coord
     }
     markers.push(marker);
-  })
+  });
 
-  console.log(markers);
-
-  // const getMarker = (marker) => {
-  //   new window.google.maps.Marker({
-  //     position: marker,
-  //     map,
-  //     title: "InstrumentMatch"
-  //   })
-  // }
-
-  // useEffect(() => {
-  //   if (markersLatLng[0]) getMarker(markersLatLng[0]);
-  // })
+  const onSelect = item => {
+    setSelected(item);
+  }
 
   const mapStyles = {
     height: "500px",
-    width: "500px"};
+    width: "450px"};
 
   const defaultCenter = {
     lat: 41.8523, lng: -87.6660
@@ -49,8 +40,19 @@ const MapContainer = ({ locations }) => {
           center={defaultCenter}
         >
           {markers?.map(marker => (
-            <Marker key={marker.id} position={marker.coordinates} />
+            <Marker
+              key={marker.id}
+              position={marker.coordinates}
+              onClick={() => onSelect(marker)} />
           ))}
+          {selected.coordinates && (
+            <InfoWindow
+              position={selected.coordinates}
+              clickable={true}
+              onCloseClick={() => setSelected({})}>
+                <p>{selected.name}</p>
+            </InfoWindow>
+          )}
 
         </GoogleMap>
 

@@ -12,7 +12,7 @@ const InstrumentDetail = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const instrumentId = params.id;
-  const instrument = useSelector(state => state.instruments.selected);
+  const instrument = useSelector(state => state.instruments.selected?.instrument);
 
   let ratings = instrument?.Reviews?.map(review => review.rating);
 

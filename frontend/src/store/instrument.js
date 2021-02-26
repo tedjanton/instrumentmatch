@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const LOAD = "instrument/LOAD";
 const LOAD_ONE = "instrument/LOAD_ONE";
 const ADD_RENTAL = "instrument/ADD_RENTAL";
+const HOVER = "instrument/HOVER";
 
 const load = instruments => ({
   type: LOAD,
@@ -18,6 +19,11 @@ const addRental = rental => ({
   type: ADD_RENTAL,
   rental
 })
+
+
+export const getHover = (selected) => async dispatch => {
+  dispatch(loadOne(selected));
+}
 
 export const getInstruments = () => async dispatch => {
   const res = await csrfFetch("/api");
@@ -63,9 +69,11 @@ const instrumentReducer = (state = {}, action) => {
     case LOAD:
       return {...state, ...action.instruments};
     case LOAD_ONE:
-      return {...state, selected: action.selected.instrument};
+      return {...state, selected: action.selected};
     case ADD_RENTAL:
       return {...state, rental: action.rental}
+    case HOVER:
+      return {...state, hover: action.instrument}
     default:
       return state;
   }
