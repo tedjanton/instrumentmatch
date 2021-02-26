@@ -15,6 +15,10 @@ h2 {
   align-items: center;
 }
 
+/* .idp-host-details {
+  max-height: 800px;
+} */
+
 .idp-host-subtitle {
   padding: 0 0 2em 0;
   border-bottom: thin solid rgba(0, 0, 0, 0.1);
@@ -108,6 +112,7 @@ h2 {
   grid-template-columns: 4fr 3fr;
   border-bottom: thin solid rgba(0, 0, 0, 0.1);
   padding-bottom: 1em;
+
 }
 
 .idp-description {
@@ -119,14 +124,6 @@ img.instrument-icon,
 .fa-tools {
   max-height: 22px;
   padding-right: 1em;
-}
-
-
-.idp-date-picker {
-  /* display: flex; */
-  /* justify-content: flex-end; */
-  float: right;
-  position: relative;
 }
 
 .idp-check-avail-button {
@@ -218,13 +215,11 @@ button:focus {
   margin-right: .5em;
 }
 
-.calendar-container {
-  position: absolute;
-  z-index: 10;
-  top: 20px;
-  right: 4%;
-  /* padding: 1em; */
-  height: 600px;
+div.calendar-container {
+  margin-right: 0 !important;
+  margin-left: 2em;
+  width: 350px;
+  
 }
 
 .react-calendar {
