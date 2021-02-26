@@ -22,10 +22,10 @@ export const findInstruments = searchList => async dispatch => {
 }
 
 const searchReducer = (state = {}, action) => {
-  console.log(action);
   switch (action.type) {
     case FINDALL:
-      return {...state, ...action.found};
+      let search = [...action.found]
+      return {...state, search};
     default:
       return state
   }
