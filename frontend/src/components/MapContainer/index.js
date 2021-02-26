@@ -8,8 +8,6 @@ const MapContainer = ({ locations }) => {
   const hover = useSelector(state => state.instruments.selected)
   let markersArray = [];
 
-  console.log(selectedMarker);
-
   useEffect(() => {
     if (hover) {
       let hovering = markersArray.filter(mk => mk.id === hover.id);
@@ -56,7 +54,7 @@ const MapContainer = ({ locations }) => {
               position={marker.coordinates}
               onClick={() => onSelect(marker)} />
           ))}
-          {selectedMarker.coordinates && (
+          {selectedMarker?.coordinates && (
             <InfoWindow
               position={selectedMarker.coordinates}
               clickable={true}
