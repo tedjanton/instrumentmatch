@@ -19,6 +19,11 @@ router.get("/", asyncHandler(async (_req, res) => {
   return res.json({ instruments });
 }));
 
+router.get("/search/:id", asyncHandler(async (req, res) => {
+  const instrument = await Instrument.findByPk(req.params.id)
+  return res.json({ instrument })
+}))
+
 // router.post(
 //   "/",
 //   singleMulterUpload("image"),

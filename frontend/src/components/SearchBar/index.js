@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import Select from "react-select";
+import { findInstruments } from "../../store/search";
 import "./Search.css";
 
 const SearchBar = () => {
   const instruments = useSelector(state => state.instruments.instruments);
   const [query, setQuery] = useState("");
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const searchList = instruments?.map(instrument => {
     return {
@@ -39,7 +41,8 @@ const SearchBar = () => {
         found.push(item.id);
       }
     })
-    history.push(`/instruments/${found}`);
+    dispatch(findInstruments(found));
+    history.push("/instruments");
   }
 
   return (
