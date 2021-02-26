@@ -20,7 +20,9 @@ router.get("/", asyncHandler(async (_req, res) => {
 }));
 
 router.get("/search/:id", asyncHandler(async (req, res) => {
-  const instrument = await Instrument.findByPk(req.params.id)
+  const instrument = await Instrument.findByPk(req.params.id, {
+    include: [Review, Image, Family]
+  });
   return res.json({ instrument })
 }))
 

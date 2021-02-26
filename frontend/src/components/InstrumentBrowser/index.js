@@ -10,14 +10,17 @@ import "./InstrumentBrowser.css";
 const InstrumentBrowser = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const instruments = useSelector(state => state.instruments.instruments);
+  const instrumentState = useSelector(state => state.instruments.instruments);
   const searchQuery = useSelector(state => state.search.search)
   let locations = [];
 
-
   let searched = searchQuery?.map(query => query.instrument)
-  console.log(searched);
-  console.log(instruments);
+  let instruments;
+  if (searched) {
+    instruments = searched
+  } else {
+    instruments = instrumentState;
+  }
 
   instruments?.forEach(instrument => {
     const allRatings = instrument.Reviews.map(review => review.rating);
