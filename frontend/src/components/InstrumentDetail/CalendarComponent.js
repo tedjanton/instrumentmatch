@@ -40,12 +40,6 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
     setShowCal(true);
   }
 
-  // const addDays = (date, days) => {
-  //   let result = new Date(date);
-  //   result.setDate(result.getDate() + days);
-  //   return result;
-  // }
-
   const onClick = (e) => {
     e.preventDefault();
 
@@ -75,8 +69,8 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
           onChange={onChange}
           value={value}
           selectRange={true}
-          // showDoubleView={true}
           tileDisabled={tileDisabled}
+          minDate={new Date()}
         />
         <div id="close-cal">
           <button>close</button>

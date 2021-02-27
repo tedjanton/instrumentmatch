@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
+  const instruments = useSelector(state => state.instruments.instruments)
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {
@@ -20,6 +21,9 @@ const ProfileButton = ({ user }) => {
       <>
         <li className="nav-li-dropdown">Welcome, {user.username}!</li>
         <li className="nav-li-dropdown">{user.email}</li>
+        <li className="nav-li-dropdown">
+         <Link to="/myrentals">My Rentals</Link>
+        </li>
         <span className="line"></span>
       </>
     )
@@ -50,6 +54,7 @@ const ProfileButton = ({ user }) => {
     setShowMenu(false);
     dispatch(sessionActions.logout());
   }
+
 
   return (
     <>

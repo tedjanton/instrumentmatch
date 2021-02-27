@@ -7,6 +7,8 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import InstrumentBrowser from "./components/InstrumentBrowser";
 import InstrumentDetail from "./components/InstrumentDetail";
+import MyRentals from "./components/MyRentals";
+import ReviewForm from "./components/MyRentals/ReviewForm";
 
 
 function App() {
@@ -33,6 +35,12 @@ function App() {
           </Route>
           <Route path="/instruments/:id">
             <InstrumentDetail />
+          </Route>
+          <Route path="/myrentals">
+            <MyRentals />
+          </Route>
+          <Route path="/addreview/:id">
+            <ReviewForm />
           </Route>
         </Switch>
       )}

@@ -4,6 +4,7 @@ const LOAD = "instrument/LOAD";
 const LOAD_ONE = "instrument/LOAD_ONE";
 const ADD_RENTAL = "instrument/ADD_RENTAL";
 const HOVER = "instrument/HOVER";
+const ADD_REVIEW = "instrument/ADD_REVIEW"
 
 const load = instruments => ({
   type: LOAD,
@@ -18,6 +19,11 @@ const loadOne = selected => ({
 const addRental = rental => ({
   type: ADD_RENTAL,
   rental
+})
+
+const addReview = review => ({
+  type: ADD_REVIEW,
+  review
 })
 
 
@@ -47,7 +53,7 @@ export const getReviews = (id) => async dispatch => {
   if (res.ok) {
     dispatch(load(reviews));
   }
-}
+};
 
 export const postRental = (rental) => async dispatch => {
   const { userId, instrumentId, rentalStartDate, rentalEndDate } = rental;
@@ -57,11 +63,28 @@ export const postRental = (rental) => async dispatch => {
       userId,
       instrumentId,
       rentalStartDate,
-      rentalEndDate })
+      rentalEndDate
+    })
   });
 
   const data = await res.json();
   dispatch(addRental(data))
+}
+
+export const postReview = (submission) => async dispatch => {
+  const { userId, instrumentId, rating, review } = submission;
+  const res = await csrfFetch(`/api/addreview/${instrumentId}`, {
+    method: "POST",
+    body: JSON.stringify({
+      userId,
+      instrumentId,
+      review,
+      rating
+    })
+  })
+
+  const data = await res.json();
+  dispatch(addReview(data));
 }
 
 const instrumentReducer = (state = {}, action) => {
@@ -72,6 +95,8 @@ const instrumentReducer = (state = {}, action) => {
       return {...state, selected: action.selected};
     case ADD_RENTAL:
       return {...state, rental: action.rental}
+    case ADD_REVIEW:
+      return {...state, review: action.review}
     case HOVER:
       return {...state, hover: action.instrument}
     default:

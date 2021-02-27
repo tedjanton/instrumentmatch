@@ -35,8 +35,16 @@ const MapContainer = ({ locations }) => {
     width: "450px"
   };
 
-  const defaultCenter = {
-    lat: 41.8523, lng: -87.6660
+  let mapCenter;
+  if (selectedMarker) {
+    mapCenter = {
+      lat: selectedMarker.lat,
+      lng: selectedMarker.lng
+    }
+    mapCenter = {
+      lat: 41.8523,
+      lng: -87.660
+    }
   }
 
   return (
@@ -46,7 +54,7 @@ const MapContainer = ({ locations }) => {
           id="map"
           mapContainerStyle={mapStyles}
           zoom={11}
-          center={defaultCenter}
+          center={mapCenter}
         >
           {markersArray.length && markersArray?.map(marker => (
             <Marker

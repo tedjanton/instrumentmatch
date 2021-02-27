@@ -1,0 +1,33 @@
+.rentals-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.rental-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 1em;
+  margin: 1em;
+}
+
+.rental-img-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.rental-img-container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.rental-name-container {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
