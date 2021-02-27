@@ -4,7 +4,8 @@ const LOAD = "instrument/LOAD";
 const LOAD_ONE = "instrument/LOAD_ONE";
 const ADD_RENTAL = "instrument/ADD_RENTAL";
 const HOVER = "instrument/HOVER";
-const ADD_REVIEW = "instrument/ADD_REVIEW"
+const ADD_REVIEW = "instrument/ADD_REVIEW";
+const REMOVE = "item/REMOVE";
 
 const load = instruments => ({
   type: LOAD,
@@ -24,6 +25,11 @@ const addRental = rental => ({
 const addReview = review => ({
   type: ADD_REVIEW,
   review
+})
+
+const remove = item => ({
+  type: REMOVE,
+  item
 })
 
 
@@ -71,6 +77,16 @@ export const postRental = (rental) => async dispatch => {
   dispatch(addRental(data))
 }
 
+export const deleteItem = id => async dispatch => {
+  const res = await csrfFetch(`/api/rental/${id}`, {
+    method: "POST",
+    body: JSON.stringify({ id })
+  });
+  const data = await res.json();
+
+  dispatch(remove(data));
+}
+
 export const postReview = (submission) => async dispatch => {
   const { userId, instrumentId, rating, review } = submission;
   const res = await csrfFetch(`/api/addreview/${instrumentId}`, {
@@ -94,11 +110,14 @@ const instrumentReducer = (state = {}, action) => {
     case LOAD_ONE:
       return {...state, selected: action.selected};
     case ADD_RENTAL:
-      return {...state, rental: action.rental}
+      return {...state, rental: action.rental};
     case ADD_REVIEW:
-      return {...state, review: action.review}
+      return {...state, review: action.review};
     case HOVER:
-      return {...state, hover: action.instrument}
+      return {...state, hover: action.instrument};
+    case REMOVE:
+      console.log(action.item);
+      return state;
     default:
       return state;
   }

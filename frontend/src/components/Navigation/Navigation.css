@@ -93,6 +93,7 @@ a.loggedout-dropdown {
   flex-direction: column;
   background-color: #ebebeb;
   position: absolute;
+  z-index: 100;
   right: 3.5%;
   color: black;
   padding: 1em 0;

@@ -34,8 +34,15 @@ router.post("/addreview/:id", asyncHandler(async (req, res) => {
     review,
     rating
   });
-
   return res.json({ newReview })
+}))
+
+router.post("/rental/:id", asyncHandler(async (req, res) => {
+  const rental = await Rental.findByPk(req.params.id);
+  console.log(rental);
+  const item = rental.destroy();
+
+  return res.json({ item });
 }))
 
 

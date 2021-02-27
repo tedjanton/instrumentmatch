@@ -6,6 +6,7 @@ import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import note from "../../images/music-note.png";
 import "./InstrumentDetail.css";
+import { useHistory } from "react-router-dom";
 
 
 const CalendarComponent = ({ instrument, currRating, ratings }) => {
@@ -13,6 +14,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
   const [showCal, setShowCal] = useState(false);
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const rentals = instrument?.Rentals;
 
@@ -52,6 +54,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
     if (sessionUser) {
       setShowCal(false);
       dispatch(postRental(rental));
+      history.push("/myrentals");
     }
   }
 

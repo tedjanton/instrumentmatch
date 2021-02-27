@@ -34,7 +34,7 @@ const InstrumentDetail = () => {
         </div>
         <div className="idp-subtitle">
           <img className="idp-note" src={note} />
-          <p className="idp-rating">{currRating?.toFixed(2)}</p>
+          <p className="idp-rating">{currRating?.toString()}</p>
           <p className="idp-num-reviews">
             {`(${ratings?.length > 1 ? "reviews" : "review"})`}
             </p>
@@ -78,14 +78,14 @@ const InstrumentDetail = () => {
         <div className="idp-date-picker">
           <CalendarComponent
             instrument={instrument}
-            currRating={currRating?.toFixed(2)}
+            currRating={currRating?.toString()}
             ratings={ratings} />
         </div>
       </div>
       <div className="idp-reviews-containter">
       <Reviews
             instrument={instrument}
-            currRating={currRating?.toFixed(2)}
+            currRating={currRating?.toString()}
             ratings={ratings} />
       </div>
     </div>
