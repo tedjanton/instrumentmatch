@@ -28,7 +28,8 @@ const MyRentals = () => {
   useEffect(() => {
     if (selectedRental) {
       dispatch(deleteItem(selectedRental));
-      history.push("/instruments");
+      // history.push("/instruments");
+      window.location.reload(true);
     }
   }, [selectedRental])
 
@@ -44,6 +45,9 @@ const MyRentals = () => {
       <div className="rentals-container">
       {rentalDetails?.map(rental => (
         <div key={rental.id} id={rental.id} className="rental-container">
+          <div className="rental-img-container">
+            <img src={rental.Instrument.Images[0].imgSrc} />
+          </div>
           <div className="rental-name-container">
             <p>{`${rental.Instrument.manufacturer} ${rental.Instrument.name}`}</p>
           </div>
@@ -55,7 +59,9 @@ const MyRentals = () => {
           </div>
           <div className="rental-cancel-container">
             <button
-            onClick={(e) => setSelectedRental(rental.id)}
+            onClick={(e) => {
+              window.confirm("Are you sure you want to cancel?")
+              setSelectedRental(rental.id)}}
             >Cancel Rental
             </button>
           </div>

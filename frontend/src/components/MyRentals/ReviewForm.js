@@ -33,7 +33,7 @@ const ReviewForm = () => {
         <div>
           <p>Rate 1-5 Music Notes</p>
           <input
-            type="text"
+            type="number"
             value={rating}
             onChange={(e) => setRating(e.target.value)}
             placeholder="rating"
