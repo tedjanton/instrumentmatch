@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import ProfileButton from "../ProfileButton";
 import SearchBar from "../SearchBar";
 import "./Navigation.css";
+import logo from "../../images/favicon_io/android-chrome-512x512.png";
 
 const Navigation = ({ isLoaded }) => {
   const sessionUser = useSelector(state => state.session.user);
@@ -11,7 +12,11 @@ const Navigation = ({ isLoaded }) => {
     <nav>
       <NavLink exact to="/">
         <div className="nav-logo">
-          <i className="fas fa-guitar" />
+          <img src={logo}/>
+          <div className="instrument-match">
+            <p>Instrument</p>
+            <p>Match</p>
+          </div>
         </div>
       </NavLink>
       <div className="nav-search">
