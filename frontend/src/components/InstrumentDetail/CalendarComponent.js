@@ -45,6 +45,11 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
   const onClick = (e) => {
     e.preventDefault();
 
+    if (!sessionUser) {
+      alert("Please sign in to make a rental");
+      window.location.reload(true);
+    }
+
     const rental = {
       userId: sessionUser.id,
       instrumentId: instrument.id,
@@ -56,6 +61,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
       dispatch(postRental(rental));
       history.push("/myrentals");
     }
+
   }
 
   let calComponent;

@@ -217,9 +217,9 @@ button:focus {
 
 div.calendar-container {
   margin-right: 0 !important;
-  margin-left: 2em;
+  margin-left: 3em;
   width: 350px;
-  
+
 }
 
 .react-calendar {
