@@ -88,11 +88,24 @@ h2 {
   grid-row-start: 1;
   grid-row-end: 5;
 }
+
+.idp-image-div.image-0 img {
+  border-radius: 20px 0 0 20px;
+}
+
 .image-1 {
   grid-column-start: 3;
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 3;
+}
+
+.idp-image-div.image-1 img {
+  border-radius: 0 20px 0 0;
+}
+
+.idp-image-div.image-2 img {
+  border-radius: 0 0 20px 0;
 }
 
 .image-2 {
@@ -146,13 +159,15 @@ img.instrument-icon,
   display: inline-block;
   text-transform: uppercase;
   width: 350px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+#open-cal {
+  border-radius: 0 0 20px 20px;
 }
 
 #open-cal:hover,

@@ -34,8 +34,10 @@ h1 {
 }
 
 .home-featured-title {
-  padding-left: 5%;
-  padding-top: 2%;
+  margin: 2% 6%;
+  padding: 1% 0;
+  font-weight: 700;
+  font-size: 28px;
 }
 
 .home-featured-container {
@@ -43,7 +45,7 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 3%;
+  margin: 0 5%;
 }
 
 .feature-item-container {
