@@ -37,7 +37,7 @@ const InstrumentDetail = () => {
           <p className="idp-rating">{currRating?.toString()}</p>
           <p className="idp-num-reviews">
             {`(${ratings?.length} ${ratings?.length > 1 ? "reviews" : "review"})`}
-            </p>
+          </p>
           <p>{`•`}</p>
           <Link
             to="/instruments"

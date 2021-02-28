@@ -34,7 +34,10 @@ const calcRating = (ratings) => {
     total += rating;
   })
 
-  return total/ratings.length;
+  let avg = total/ratings.length;
+  let fixed = avg.toFixed(2);
+  let parsed = Number(fixed);
+  return  parsed;
 }
 
 export default calcRating;

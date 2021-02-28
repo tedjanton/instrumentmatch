@@ -29,8 +29,10 @@ const InstrumentBrowser = () => {
     let location = {
       id: instrument.id,
       name: instrument.name,
-      ratings: avgRating,
+      Reviews: instrument.Reviews,
+      Family: instrument.Family,
       manufacturer: instrument.manufacturer,
+      pricePerDay: instrument.pricePerDay,
       imgSrc: instrument.Images[0],
       lat: parseFloat(instrument.lat),
       lng: parseFloat(instrument.lng)
