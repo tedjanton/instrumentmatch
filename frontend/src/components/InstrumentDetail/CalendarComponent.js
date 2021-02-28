@@ -46,7 +46,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
     e.preventDefault();
 
     if (!sessionUser) {
-      alert("Please sign in to make a rental");
+      alert("Please log in or sign up to book a rental");
       window.location.reload(true);
     }
 
@@ -57,6 +57,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
       rentalEndDate: value[1]
     }
     if (sessionUser) {
+      window.confirm("Are you sure would like to book this rental?")
       setShowCal(false);
       dispatch(postRental(rental));
       history.push("/myrentals");
@@ -120,7 +121,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
           <img className="cal-note" src={note} />
           <p className="cal-rating">{currRating}</p>
           <p className="cal-num-reviews">
-            {`(${ratings?.length > 1 ? "reviews" : "review"})`}
+          {`(${ratings?.length} ${ratings?.length > 1 ? "reviews" : "review"})`}
           </p>
         </div>
       </div>

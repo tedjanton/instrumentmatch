@@ -11,7 +11,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 16px 20px 16px 60px;
+  margin: 16px 20px 16px 60%;
   font-size: 18px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -47,7 +47,7 @@ a:link {
 }
 
 .nav-links {
-  margin-right: 3%;
+  margin-right: 5%;
 }
 
 .nav-ul {

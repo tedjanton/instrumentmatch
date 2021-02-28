@@ -36,7 +36,7 @@ const InstrumentDetail = () => {
           <img className="idp-note" src={note} />
           <p className="idp-rating">{currRating?.toString()}</p>
           <p className="idp-num-reviews">
-            {`(${ratings?.length > 1 ? "reviews" : "review"})`}
+            {`(${ratings?.length} ${ratings?.length > 1 ? "reviews" : "review"})`}
             </p>
           <p>{`•`}</p>
           <Link

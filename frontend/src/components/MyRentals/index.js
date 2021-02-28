@@ -23,8 +23,6 @@ const MyRentals = () => {
     })
   });
 
-  console.log(rentalDetails);
-
   useEffect(() => {
     if (selectedRental) {
       dispatch(deleteItem(selectedRental));
@@ -39,9 +37,57 @@ const MyRentals = () => {
     dispatch(getInstruments());
   }, [dispatch]);
 
+  const getRentalDate = (startStr, endStr) => {
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+    let startDate = new Date(startStr);
+    let startDay = startDate.getDate();
+    let startMonth = monthNames[startDate.getMonth()]
+    let startYear = startDate.getFullYear();
+
+    let endDate = new Date(endStr);
+    let endDay = endDate.getDate();
+    let endMonth = monthNames[endDate.getMonth()];
+    let endYear = startDate.getFullYear();
+
+    if (endYear === startYear) {
+      return `${startMonth} ${startDay} to ${endMonth} ${endDay}, ${endYear}`;
+    } else {
+      return `${startMonth} ${startDay}, ${startYear} to ${endMonth} ${endDay}, ${endYear}`;
+    }
+  }
+
+  const currDate = new Date().toJSON().slice(0, 10);
+
+  const reviewBtn = (rental, endDate) => {
+    if (currDate > endDate) {
+      return (
+        <Link to={`/addreview/${rental.Instrument.id}`}>Add Review</Link>
+      )
+    } else {
+      return (
+        <button>Rental Not Completed</button>
+      )
+    }
+  }
+
   return (
     <div>
-      <h2>My Rentals</h2>
+      <div className="rentals-title">
+        <h2>My Rentals</h2>
+      </div>
       <div className="rentals-container">
       {rentalDetails?.map(rental => (
         <div key={rental.id} id={rental.id} className="rental-container">
@@ -52,7 +98,8 @@ const MyRentals = () => {
             <p>{`${rental.Instrument.manufacturer} ${rental.Instrument.name}`}</p>
           </div>
           <div className="rental-dates">
-            <p>{`Rented ${rental.rentalStartDate} to ${rental.rentalEndDate}`}</p>
+            <p>Rented:</p>
+            <p>{getRentalDate(rental.rentalStartDate, rental.rentalEndDate)}</p>
           </div>
           <div className="rental-add-review-container">
             <Link to={`/addreview/${rental.Instrument.id}`}>Add Review</Link>

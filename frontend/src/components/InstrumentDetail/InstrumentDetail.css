@@ -1,7 +1,7 @@
 
 
 .idp-header {
-  margin-left: 5%;
+  margin-left: 6.5%;
 }
 
 h2 {
@@ -67,7 +67,7 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 5vw);
   grid-gap: 10px;
-  margin: 1em 5%;
+  margin: 1em 6.5%;
 }
 
 .idp-image-div img {
@@ -107,12 +107,15 @@ h2 {
 }
 
 .idp-lower-grid {
-  margin: 0 5%;
+  margin: 0 6.5%;
   display: grid;
   grid-template-columns: 4fr 3fr;
   border-bottom: thin solid rgba(0, 0, 0, 0.1);
   padding-bottom: 1em;
+}
 
+.idp-date-picker {
+  margin-top: 5%;
 }
 
 .idp-description {
@@ -230,9 +233,17 @@ div.calendar-container {
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
 }
 
+.reviews-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 5%;
+}
+
 .reviews-header-container.idp-subtitle {
   font-size: 24px;
-  margin: 3% 5%;
+  margin: 3% 2%;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .review-container {
@@ -254,7 +265,15 @@ div.calendar-container {
 }
 
 .review-name {
-  font-weight: 800;
+  font-weight: 600;
+  margin: 0;
+}
+
+.review-date {
+  font-weight: 400;
+  font-size: 13px;
+  color: grey;
+  margin: 0;
 }
 
 .review-container-description p {
