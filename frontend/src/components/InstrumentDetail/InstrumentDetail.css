@@ -43,9 +43,8 @@ h2 {
 }
 
 .idp-note {
-  max-height: 1em;
-  width: 1.2em;
-  margin-right: .2em;
+  max-height: 2em;
+  width: 1.5em;
   padding-bottom: 3px;
 }
 
@@ -205,9 +204,8 @@ button:focus {
 }
 
 .cal-note {
-  max-height: 1em;
-  width: 1.2em;
-  margin-right: .2em;
+  max-height: 2em;
+  width: 1.5em;
   padding-bottom: 3px;
 }
 
@@ -218,6 +216,7 @@ button:focus {
 
 .cal-num-reviews {
   margin-right: .5em;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 div.calendar-container {

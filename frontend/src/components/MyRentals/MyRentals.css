@@ -71,7 +71,8 @@
 }
 
 .rental-add-review-button,
-.rental-cancel-button {
+.rental-cancel-button,
+.review-submit-button {
   border: none;
   color: white;
   padding: 1em 2em;
@@ -92,7 +93,8 @@
 
 }
 
-.rental-add-review-button {
+.rental-add-review-button,
+.review-submit-button {
   background-color: #bd921d;
 }
 
@@ -101,7 +103,8 @@
 }
 
 .rental-add-review-button:hover,
-.rental-cancel-button:hover {
+.rental-cancel-button:hover,
+.review-submit-button:hover {
   background-color: #966f04;
 }
 
@@ -122,4 +125,73 @@
 
 .rental-add-review-button:hover {
   background-color: #966f04;
+}
+
+.review-form-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 5%;
+}
+
+.review-instrument-title {
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+
+
+.review-instrument-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 17px;
+}
+
+.review-comment-input {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  height: 3em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 16em;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+form.review-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ratings-widget {
+  margin-top: 1em;
+  padding-left: 3em;
+}
+
+.review-title {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.review-comment-input {
+  width: 85%;
+  text-align: left;
+  padding: 1em 0 1em .7em;
+}
+
+.review-comment-div,
+.review-submit-button-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
 }

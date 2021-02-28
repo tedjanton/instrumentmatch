@@ -1,4 +1,4 @@
-import note from "../../images/music-note.png";
+import note from "../../images/music-note.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getReviews } from "../../store/instrument";

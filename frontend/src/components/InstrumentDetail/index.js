@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getOneInstrument } from "../../store/instrument";
 import CalendarComponent from "./CalendarComponent";
 import Reviews from "./Reviews";
-import note from "../../images/music-note.png";
+import note from "../../images/music-note.svg";
 import calcRating, { getIcon } from "../../utils";
 import "./InstrumentDetail.css";
 

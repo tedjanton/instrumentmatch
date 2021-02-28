@@ -23,6 +23,8 @@ const MyRentals = () => {
     })
   });
 
+
+
   useEffect(() => {
     if (selectedRental) {
       dispatch(deleteItem(selectedRental));

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getHover } from "../../store/instrument";
 import calcRating, { getIcon } from "../../utils";
-import note from "../../images/music-note.png";
+import note from "../../images/music-note.svg";
 
 const InstrumentComponent = ({ instrument }) => {
   const { id, name, manufacturer, imgSrc, Reviews, Family, pricePerDay, lat, lng } = instrument;

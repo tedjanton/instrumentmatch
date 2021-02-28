@@ -4,7 +4,7 @@ import { isWithinInterval } from "date-fns";
 import { postRental } from "../../store/instrument";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-import note from "../../images/music-note.png";
+import note from "../../images/music-note.svg";
 import "./InstrumentDetail.css";
 import { useHistory } from "react-router-dom";
 
