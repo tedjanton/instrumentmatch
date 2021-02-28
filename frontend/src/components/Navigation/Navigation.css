@@ -58,8 +58,8 @@ a:link {
   list-style: none;
 }
 
-.nav-li-dropdown {
-  margin: 0 1em;
+.nav-li-dropdown.myrentals:hover {
+  background-color: rgb(228, 228, 228);
 }
 
 a.loggedout-dropdown {
@@ -128,12 +128,8 @@ a.loggedout-dropdown {
 .profile-dropdown li {
   list-style: none;
   font-size: 14px;
-  padding: .7em 0;
+  padding: .7em 1em;
   border: none;
-}
-
-.logout-button-container {
-  margin: 0 1em;
 }
 
 .logout-button {

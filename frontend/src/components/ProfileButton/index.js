@@ -21,7 +21,7 @@ const ProfileButton = ({ user }) => {
       <>
         <li className="nav-li-dropdown">Welcome, {user.username}!</li>
         <li className="nav-li-dropdown">{user.email}</li>
-        <li className="nav-li-dropdown">
+        <li className="nav-li-dropdown myrentals">
          <Link to="/myrentals">My Rentals</Link>
         </li>
         <span className="line"></span>

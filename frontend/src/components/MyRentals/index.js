@@ -74,11 +74,32 @@ const MyRentals = () => {
   const reviewBtn = (rental, endDate) => {
     if (currDate > endDate) {
       return (
-        <Link to={`/addreview/${rental.Instrument.id}`}>Add Review</Link>
+        <button className="rental-add-review-button">
+          <Link to={`/addreview/${rental.Instrument.id}`}>Add Review</Link>
+        </button>
       )
     } else {
       return (
-        <button>Rental Not Completed</button>
+        <button disabled="true" className="rental-button-disabled">Rental Not Completed</button>
+      )
+    }
+  }
+
+  const cancelBtn = (rental, endDate) => {
+    if (currDate < endDate) {
+      return (
+        <button
+          className="rental-cancel-button"
+          onClick={(e) => {
+            window.confirm("Are you sure you want to cancel?")
+            setSelectedRental(rental.id)}}
+          >Cancel Rental
+        </button>
+      )
+    } else {
+      return (
+        <>
+        </>
       )
     }
   }
@@ -98,19 +119,16 @@ const MyRentals = () => {
             <p>{`${rental.Instrument.manufacturer} ${rental.Instrument.name}`}</p>
           </div>
           <div className="rental-dates">
-            <p>Rented:</p>
-            <p>{getRentalDate(rental.rentalStartDate, rental.rentalEndDate)}</p>
-          </div>
-          <div className="rental-add-review-container">
-            <Link to={`/addreview/${rental.Instrument.id}`}>Add Review</Link>
+            <p className="rental-dates-header">Rental Dates:</p>
+            <p className="rental-dates-text">
+              {getRentalDate(rental.rentalStartDate, rental.rentalEndDate)}
+            </p>
           </div>
           <div className="rental-cancel-container">
-            <button
-            onClick={(e) => {
-              window.confirm("Are you sure you want to cancel?")
-              setSelectedRental(rental.id)}}
-            >Cancel Rental
-            </button>
+            {cancelBtn(rental, rental.rentalEndDate)}
+          </div>
+          <div className="rental-add-review-container">
+            {reviewBtn(rental, rental.rentalEndDate)}
           </div>
         </div>
       ))}
