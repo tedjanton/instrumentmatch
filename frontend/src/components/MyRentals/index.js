@@ -24,7 +24,9 @@ const MyRentals = () => {
   });
 
   useEffect(() => {
-
+    if (myRentals) {
+      return;
+    }
   }, [myRentals])
 
 

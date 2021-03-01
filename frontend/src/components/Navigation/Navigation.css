@@ -109,7 +109,7 @@ a.loggedout-dropdown {
   background-color: #ebebeb;
   position: absolute;
   z-index: 100;
-  right: 3.5%;
+  right: 5.5%;
   color: black;
   padding: 1em 0;
   margin: .8em .8em;
@@ -192,7 +192,7 @@ li#close-menu button:hover {
 .footer-container {
   position: absolute;
   width: 100%;
-  
+
 }
 
 footer {
