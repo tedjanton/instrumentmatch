@@ -47,7 +47,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
 
     if (!sessionUser) {
       alert("Please log in or sign up to book a rental!");
-      window.location.reload(true);
+      window.location.reload();
     }
 
     const rental = {

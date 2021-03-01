@@ -35,7 +35,7 @@ const MyRentals = () => {
     if (selectedRental) {
       dispatch(deleteItem(selectedRental));
       // history.push("/instruments");
-      window.location.reload(true);
+      window.location.reload();
     }
   }, [selectedRental])
 
