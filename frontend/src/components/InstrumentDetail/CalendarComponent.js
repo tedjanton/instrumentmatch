@@ -57,7 +57,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
       rentalEndDate: value[1]
     }
     if (sessionUser) {
-      window.confirm("Are you sure would like to book this rental?")
+      window.confirm("Are you sure you would like to book this rental?")
       setShowCal(false);
       dispatch(postRental(rental));
       history.push("/myrentals");
