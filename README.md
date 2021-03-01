@@ -13,7 +13,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/tedjanton/instrumentmatch">
-    <img src="frontend/src/images/favicon_io/android-chrome-512x512.png" alt="Logo" width="80" height="80">
+    <img src="frontend/src/images/favicon_io/android-chrome-512x512.png" alt="Logo" width="80" height="80" style="background-color:white">
   </a>
 
   <h3 align="center">Instrument Match</h3>
@@ -128,38 +128,26 @@ Here is everything we need you to do to get started with Instrument Match.
 ### Search for instruments by family, name, or location.
 ![Search for Instruments](site-images/family-search.gif)
 ### Edit your rentals.
-![Like & Comment](site-images/my-rentals.gif)
+![My Rentals](site-images/my-rentals.gif)
 ### Leave a rating and a comment.
-![Profile](site-images/reviews.gif)
+![Reviews](site-images/reviews.gif)
 
 
 ## Obstacles
 
 ### Rating API
 
-We noticed that we needed to calculate the user rating for each game in a number of places, so we decided it would be best to implement a calcRating helper function. This allows us to keep our code clean and precise.
+tbd
 
-Helper Function (calcRating):
-<br>
-</br>
-![helperFunc](public/images/calcrating-helper.png)
-<br>
-</br>
-API Route Example Usage:
-<br>
-</br>
-![ratingAPI](public/images/rating-api.png)
+### Reaching for images with Sequelize
 
-### User Game Status Persistance
+tbd
 
-Depending on how a user has a specific game categorized in their game center, we wanted the chosen (red) status button to persist when they navigate to and from that specific game page. This required figuring out a solution to prevent the previous game status from persisting after the user had changed that status.
-
-![gameStatuses](public/images/game-status-persistance.png)
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/RoodeAwakening/GoodGames/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/tedjanton/instrumentmatch/issues) for a list of proposed features (and known issues).
 
 
 
@@ -179,11 +167,11 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact & Acknowledgements
 
-* Derek Roode - [LinkedIn](https://www.linkedin.com/in/derek-roode-9014a796/) - [GitHub](https://github.com/RoodeAwakening)
-* Ted Anton - [LinkedIn](https://www.linkedin.com/in/ted-anton/) - [GitHub](https://github.com/tedjanton)
-* Rob Whitacre - [LinkedIn](https://www.linkedin.com/in/rob-whitacre-825434113/) - [GitHub](https://github.com/RobWhit5113)
 
-Project Link: [https://github.com/RoodeAwakening/GoodGames](https://github.com/RoodeAwakening/GoodGames)
+* Ted Anton - [LinkedIn](https://www.linkedin.com/in/ted-anton/) - [GitHub](https://github.com/tedjanton)
+
+
+Project Link: [https://github.com/tedjanton/instrumentmatch/](https://github.com/tedjanton/instrumentmatch/)
 
 
 <!-- ACKNOWLEDGEMENTS -->
