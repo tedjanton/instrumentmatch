@@ -188,3 +188,30 @@ li#close-menu button:hover {
   background-color: #bd921d;
   color: white;
 }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #ebebeb;
+  width: 100%;
+  height: 150px;
+  border: thin solid rgba(158, 158, 158, 0.5);
+}
+
+.about-me-container {
+  margin-left: 5%;
+}
+
+.external-links {
+  font-size: 30px;
+  margin: 2% 5%;
+  display: flex;
+
+}
+
+.fab.fa-linkedin,
+.fab.fa-github {
+  color: grey;
+  padding: 10px;
+}

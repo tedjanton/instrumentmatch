@@ -9,6 +9,7 @@ import InstrumentBrowser from "./components/InstrumentBrowser";
 import InstrumentDetail from "./components/InstrumentDetail";
 import MyRentals from "./components/MyRentals";
 import ReviewForm from "./components/MyRentals/ReviewForm";
+import Footer from "./components/Navigation/Footer";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }

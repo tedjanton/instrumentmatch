@@ -13,7 +13,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   padding: 1em 0 2.7em 0;
-  margin: 0 7.5% 1em 7.5%;
+  margin: 0 7.5% 2.5% 7.5%;
   align-items: center;
   border-bottom:thin solid rgba(0, 0, 0, 0.1)
 }
