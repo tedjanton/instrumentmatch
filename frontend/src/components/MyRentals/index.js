@@ -23,6 +23,10 @@ const MyRentals = () => {
     })
   });
 
+  useEffect(() => {
+
+  }, [myRentals])
+
 
 
   useEffect(() => {

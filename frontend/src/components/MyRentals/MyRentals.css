@@ -127,10 +127,20 @@
   background-color: #966f04;
 }
 
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 2em;
+  margin: 0 5%;
+  border-bottom: thin solid rgba(0, 0, 0, 0.1);
+
+}
+
 .review-form-container {
+  position: relative;
   display: flex;
   justify-content: space-around;
-  margin: 0 5%;
+  margin: 5% 5%;
 }
 
 .review-instrument-title {

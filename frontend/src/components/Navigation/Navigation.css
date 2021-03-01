@@ -189,7 +189,15 @@ li#close-menu button:hover {
   color: white;
 }
 
+.footer-container {
+  position: absolute;
+  width: 100%;
+  
+}
+
 footer {
+  margin-top: 5%;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

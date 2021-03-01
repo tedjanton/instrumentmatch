@@ -68,7 +68,7 @@ body {
 
 .login-button:hover,
 .login-button-demo:hover {
-  background-color: #97481a;
+  background-color: #966f04;
 }
 
 .login-demo-text {
@@ -106,7 +106,7 @@ body {
 
 .login-input:focus {
   background-color: #fff;
-  border-bottom: 2px solid #97481a;
+  border-bottom: 2px solid #966f04;
 }
 
 .login-input:placeholder {
