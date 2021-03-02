@@ -13,7 +13,7 @@ const MapContainer = ({ locations }) => {
       let hovering = markersArray.filter(mk => mk.id === hover.id);
       setSelectedMarker(hovering[0])
     }
-  }, [hover])
+  }, [hover]);
 
   locations.forEach(location => {
     let coord = { lat: location.lat, lng: location.lng }

@@ -19,7 +19,7 @@
   <h3 align="center">Instrument Match</h3>
 
   <p align="center">
-    Instrument Match is a unique take on an AirBnB clone for the gigging musician on the go. This application includes a rental and booking database for any musical instrument you might want to...or need to rent! You can browse instruments via search by instrument family, name, and location (with a Google Maps API integration). Users can make sure they are getting a great, reliable instrument before they book by reading reviews, viewing when it was last serviced, and seeing each instrument's average "Musical Note" 5-star rating. Once you book a rental, you can also add your own review and rating. If you decide to change you mind, you can cancel your rental as long as it is before the rental start date.
+    Instrument Match is a unique take on AirBnB for the gigging musician on the go. This application includes a rental and booking database for any musical instrument you might want to...or need to rent! You can browse instruments via search by instrument family, name, and location (with a Google Maps API integration). Users can make sure they are getting a great, reliable instrument before they rent by reading reviews, viewing when it was last serviced, and seeing each instrument's average "Musical Note" 5-star rating. Once you book a rental, you can also add your own review and rating. If you decide to change you mind, you can cancel your rental as long as it is before the rental start date.
     <br />
     <a href="https://github.com/tedjanton/instrumentmatch"><strong>Explore the docs »</strong></a>
     <br />
@@ -70,17 +70,28 @@
 </br>
 ![homepage-screenshot](site-images/homepage-ss.png)
 
+## Overall Structure
+
+### Back End
+The app was built using Express and Sequelize on the back end with a PostgreSQL database. The backend structure is RESTful with AJAX requests that are fullfilled with a JSON API. Model associations are used to minimize database queries to the backend, assuring speed and reliability.
+
+### Front End
+The front end is built with React and Javascript while utilizing Redux architecture, producing a lightning-fast user interface and calling upon dynamically rendered components.
+
 ### Built With
 
-* [JavaScript]()
-  * [React]()
-  * [Redux]()
-  * [Express]()
-  * [Node.js]()
-* [HTML]()
-* [CSS]()
-
-
+* [JavaScript](https://www.javascript.com/)
+* [React](https://reactjs.org/)
+  - Libraries include:
+    * [react-calendar](https://www.npmjs.com/package/react-calendar) for displaying rental bookings
+    * [date-fns](https://date-fns.org/) for handling date-picking
+    * [react-google-maps](https://www.npmjs.com/package/react-google-maps) for rendering the interactive and dynamic Google Map component
+    * [react-ratings-declarative](https://www.npmjs.com/package/react-ratings-declarative) for managing instrument ratings
+* [Redux](https://redux.js.org/)
+* [Express](https://expressjs.com/) with [BCrypt](https://www.npmjs.com/package/bcryptjs)
+* [Node.js](https://nodejs.org/en/)
+* [HTML](https://html.com/)
+* [CSS](http://www.css3.info/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -127,21 +138,25 @@ Here is everything we need you to do to get started with Instrument Match.
 ![Login](site-images/demo-login.gif)
 ### Search for instruments by family, name, or location.
 ![Search for Instruments](site-images/family-search.gif)
-### Edit your rentals.
+### Book a rental.
 ![My Rentals](site-images/my-rentals.gif)
-### Leave a rating and a comment.
+### Leave a rating and a comment on an instrument you have rented.
 ![Reviews](site-images/reviews.gif)
 
 
 ## Obstacles
 
-### Rating API
+### Google Maps markers opening for mouse hover
+AirBnB's interactive search map highlights the marker that a user's mouse is hovering on the left hand scroll of listings. In order to recreate this, I set local state on the instrument component to be "selected", then passed that to the Redux store.
+![instrument-hover](site-images/instrumentcomponent-hover.png)
 
-tbd
+And then utilized it to change the hovered over component that match the instrument's map marker state to "clicked".
+![mapcontainer-hover](site-images/mapcontainer-hover.png)
 
 ### Reaching for images with Sequelize
 
-tbd
+In order to populate images for a user's rental, I needed to write a GET route, grab the userId, and query the database with a nested "include" statement.
+![api-route](site-images/api-route.png)
 
 
 <!-- ROADMAP -->

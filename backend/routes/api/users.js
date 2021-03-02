@@ -46,7 +46,7 @@ router.get("/:id/rentals", asyncHandler(async (req, res) => {
         include: [ Image ]}]
   });
 
-  return res.json({ myRentals })
-}))
+  return res.json({ myRentals });
+}));
 
 module.exports = router;
