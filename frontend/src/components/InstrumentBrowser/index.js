@@ -8,7 +8,6 @@ import calcRating from "../../utils";
 import "./InstrumentBrowser.css";
 
 const InstrumentBrowser = () => {
-  const history = useHistory();
   const dispatch = useDispatch();
   const instrumentState = useSelector(state => state.instruments.instruments);
   const searchQuery = useSelector(state => state.search.search)
