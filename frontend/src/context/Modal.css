@@ -32,3 +32,15 @@
   margin: 4em;
   text-align: center;
 }
+
+.modal-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image-container img {
+  max-width: 150%;
+  max-height: 150%;
+  border-radius: 25px;
+}

@@ -88,7 +88,7 @@ const MyRentals = () => {
       )
     } else {
       return (
-        <button disabled="true" className="rental-button-disabled">Rental Not Completed</button>
+        <button disabled={true} className="rental-button-disabled">Rental Not Completed</button>
       )
     }
   }
