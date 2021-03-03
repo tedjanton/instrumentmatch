@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getOneInstrument } from "../../store/instrument";
@@ -7,11 +7,15 @@ import Reviews from "./Reviews";
 import note from "../../images/music-note.svg";
 import calcRating, { getIcon } from "../../utils";
 import "./InstrumentDetail.css";
+import { Modal } from "../../context/Modal";
+import PictureModal from "./PictureModal";
 
 const InstrumentDetail = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const instrumentId = params.id;
+  const [showModal, setShowModal] = useState(false);
+  const [clickedImg, setClickedImg] = useState(null)
   const instrument = useSelector(state => state.instruments.selected?.instrument);
 
   let ratings = instrument?.Reviews?.map(review => review.rating);
@@ -25,6 +29,25 @@ const InstrumentDetail = () => {
   useEffect(() => {
     dispatch(getOneInstrument(instrumentId));
   }, [])
+
+  let imgModal;
+  if (clickedImg) {
+    imgModal = (
+      <>
+        <Modal onClose={() => {
+          setShowModal(false)
+          setClickedImg(null)
+        }}>
+          <PictureModal image={clickedImg} />
+        </Modal>
+      </>
+    )
+  } else {
+    imgModal = (
+      <>
+      </>
+    )
+  }
 
   return (
     <div className="idp-container">
@@ -48,10 +71,16 @@ const InstrumentDetail = () => {
       </div>
       <div className="idp-images-container">
         {instrument?.Images?.map((image, i) => (
-          <div key={image.id} className={`idp-image-div image-${i}`}>
+          <div
+            key={image.id}
+            className={`idp-image-div image-${i}`}
+            onClick={() => {
+              setClickedImg(image)
+              setShowModal(true)}}>
             <img className="overlay" src={image.imgSrc} />
           </div>
         ))}
+      {imgModal}
       </div>
       <div className="idp-lower-grid">
         <div className="idp-host-details">

@@ -116,7 +116,6 @@ const instrumentReducer = (state = {}, action) => {
     case HOVER:
       return {...state, hover: action.instrument};
     case REMOVE:
-      console.log(action.item);
       return state;
     default:
       return state;
