@@ -89,7 +89,7 @@ export const deleteItem = id => async dispatch => {
 
 export const postReview = (submission) => async dispatch => {
   const { userId, instrumentId, rating, review } = submission;
-  const res = await csrfFetch(`/api/addreview/${instrumentId}`, {
+  const res = await csrfFetch(`/api/addreview`, {
     method: "POST",
     body: JSON.stringify({
       userId,

@@ -13,7 +13,7 @@ export const findInstruments = searchList => async dispatch => {
 
   for (let i = 0; i < searchList.length; i++) {
     let id = searchList[i];
-    let res = await csrfFetch(`/api/search/${id}`);
+    let res = await csrfFetch(`/api/instruments/${id}`);
     let instrument = await res.json();
     query.push(instrument);
   }

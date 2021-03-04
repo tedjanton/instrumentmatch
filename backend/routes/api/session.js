@@ -1,13 +1,13 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { check } = require("express-validator");
-
 const { setTokenCookie, restoreUser } = require("../../utils/auth");
 const { handleValidationErrors } = require("../../utils/validation");
 const { User } = require("../../db/models");
 
 const router = express.Router();
 
+// login checks
 const validateLogin = [
   check("credential")
   .exists({ checkFalsy: true })
@@ -19,9 +19,9 @@ const validateLogin = [
   handleValidationErrors
 ];
 
+// login user if validated (adding to the session)
 router.post("/", validateLogin, asyncHandler(async (req, res, next) => {
   const { credential, password } = req.body;
-
   const user = await User.login({ credential, password });
 
   if (!user) {
@@ -31,34 +31,19 @@ router.post("/", validateLogin, asyncHandler(async (req, res, next) => {
     err.errors = ["The provided credientials were invalid."];
     return next(err);
   }
-
   await setTokenCookie(res, user);
 
   return res.json({ user });
 }));
 
-// fetch('/api/session', {
-//   method: 'POST',
-//   headers: {
-//     "Content-Type": "application/json",
-//     "XSRF-TOKEN": `edTkDP2Q-LEVKNwjT05MqnW5QWVAHNlEsHEI`
-//   },
-//   body: JSON.stringify({ credential: 'Demo-lition', password: 'password' })
-// }).then(res => res.json()).then(data => console.log(data));
-
+// logout user (delete the session)
 router.delete("/", (_req, res) => {
   res.clearCookie("token");
+
   return res.json({ message: "success" })
 })
 
-// fetch('/api/session', {
-//   method: 'DELETE',
-//   headers: {
-//     "Content-Type": "application/json",
-//     "XSRF-TOKEN": `edTkDP2Q-LEVKNwjT05MqnW5QWVAHNlEsHEI`
-//   }
-// }).then(res => res.json()).then(data => console.log(data));
-
+// get the current logged in user (session persist)
 router.get("/", restoreUser, (req, res) => {
   const { user } = req;
   if (user) {
