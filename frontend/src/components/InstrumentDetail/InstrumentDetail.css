@@ -15,10 +15,6 @@ h2 {
   align-items: center;
 }
 
-/* .idp-host-details {
-  max-height: 800px;
-} */
-
 .idp-host-subtitle {
   padding: 0 0 2em 0;
   border-bottom: thin solid rgba(0, 0, 0, 0.1);

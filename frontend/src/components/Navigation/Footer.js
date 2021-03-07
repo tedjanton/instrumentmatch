@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="about-me-details">
             <p>My name is Ted Anton,
               and I am a software engineer that's
-              probaby a little too obsessed with his cats.</p>
+              probably a little too obsessed with his cats.</p>
           </div>
         </div>
         <div className="external-links">
