@@ -15,7 +15,7 @@ User authorization
 
 ## Instruments
 * ```GET /api/instruments``` - get all instruments
-* ```GET /api/instruments/:id - get single instrument
+* ```GET /api/instruments/:id``` - get single instrument
 
 ## Rentals
 * ```GET /api/myrentals``` - view rentals for specific user
