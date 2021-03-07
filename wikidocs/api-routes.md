@@ -1,5 +1,8 @@
 ### API Routes
 
+## Index
+* ```GET /``` - populate all instruments
+
 ## Sessions
 User authorization
 * ```GET /api/session``` - get/restore current session
@@ -8,6 +11,7 @@ User authorization
 
 ## Users
 * ``` POST /api/users``` - signup/create new user
+* ``` GET /api/users/:id/rentals``` - get rentals for signed in user
 
 ## Instruments
 * ```GET /api/instruments``` - get all instruments
@@ -15,9 +19,10 @@ User authorization
 
 ## Rentals
 * ```GET /api/myrentals``` - view rentals for specific user
-* ``DELETE /api/myrentals/:id``` - delete a rental
+* ```POST /api/instruments/:id/rental"``` - book a new rental
+* ```DELETE /api/rentals/:id``` - delete a rental
 
 ## Reviews
-* ```GET /api/reviews``` - view reviews for an instrument
-* ```POST /api/reviews``` - post a review for an instrument
+* ```GET /api/instruments/:id/reviews"``` - retrieve all reviews for an instrument
+* ```POST /api/addreview``` - post a review for an instrument
 * ```DELETE /api/reviews/:id``` - delete a review for an instrument

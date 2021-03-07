@@ -39,7 +39,7 @@ router.post("/addreview", asyncHandler(async (req, res) => {
 }))
 
 // delete a rental
-router.post("/rental/:id", asyncHandler(async (req, res) => {
+router.post("/rentals/:id", asyncHandler(async (req, res) => {
   const rental = await Rental.findByPk(req.params.id);
   const item = rental.destroy();
 

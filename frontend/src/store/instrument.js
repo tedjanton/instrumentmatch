@@ -78,7 +78,7 @@ export const postRental = (rental) => async dispatch => {
 }
 
 export const deleteItem = id => async dispatch => {
-  const res = await csrfFetch(`/api/rental/${id}`, {
+  const res = await csrfFetch(`/api/rentals/${id}`, {
     method: "POST",
     body: JSON.stringify({ id })
   });
