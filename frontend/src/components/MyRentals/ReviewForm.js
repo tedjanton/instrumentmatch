@@ -28,8 +28,8 @@ const ReviewForm = () => {
       review: comment,
       rating: parseInt(rating, 10)
     }
-    await dispatch(postReview(submission))
-    return history.push(`/instruments/${instrumentId}`)
+    await dispatch(postReview(submission));
+    return history.push(`/instruments/${instrumentId}`);
   }
 
   return (

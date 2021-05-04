@@ -49,6 +49,7 @@ router.get("/:id/rentals", asyncHandler(async (req, res) => {
   const userId = req.params.id;
   const myRentals = await Rental.findAll({
     where: { userId },
+    order: [['rentalStartDate', 'DESC']],
     include: [{
       model: Instrument,
         include: [ Image ]}]

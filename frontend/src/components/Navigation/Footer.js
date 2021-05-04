@@ -13,12 +13,12 @@ const Footer = () => {
         </div>
         <div className="external-links">
           <div className="github">
-            <a href='https://github.com/tedjanton'>
+            <a href='https://github.com/tedjanton' target="_blank">
               <i className="fab fa-github" />
             </a>
           </div>
           <div className="linkedin">
-            <a href="https://www.linkedin.com/in/ted-anton/">
+            <a href="https://www.linkedin.com/in/ted-anton/" target="_blank">
               <i className="fab fa-linkedin" />
             </a>
           </div>

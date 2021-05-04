@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
-import Select from "react-select";
+import { useHistory } from "react-router-dom";
 import { findInstruments } from "../../store/search";
 import "./Search.css";
 
@@ -48,13 +47,6 @@ const SearchBar = () => {
   return (
     <>
       <div className="search-container">
-        {/* <Select
-          value={selectedOp}
-          options={searchList}
-          onChange={(e) => setSelectedOp(e.target.value)}
-          placeholder="Start your search"
-          openMenuOnClick={true}
-        /> */}
         <form onSubmit={onSubmit}>
           <input
             className="search-input"

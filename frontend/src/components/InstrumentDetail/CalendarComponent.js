@@ -42,25 +42,26 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
     setShowCal(true);
   }
 
-  const onClick = (e) => {
+  const onClick = async (e) => {
     e.preventDefault();
 
     if (!sessionUser) {
       alert("Please log in or sign up to book a rental!");
       window.location.reload();
-    }
+    };
 
     const rental = {
       userId: sessionUser.id,
       instrumentId: instrument.id,
       rentalStartDate: value[0],
       rentalEndDate: value[1]
-    }
+    };
+
     if (sessionUser) {
       window.confirm("Are you sure you would like to book this rental?")
       setShowCal(false);
-      dispatch(postRental(rental));
-      history.push("/myrentals");
+      await dispatch(postRental(rental));
+      return history.push("/myrentals");
     }
 
   }

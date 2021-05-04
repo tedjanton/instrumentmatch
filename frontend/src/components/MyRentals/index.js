@@ -120,7 +120,10 @@ const MyRentals = () => {
       <div className="rentals-container">
       {rentalDetails?.map(rental => (
         <div key={rental.id} id={rental.id} className="rental-container">
-          <div className="rental-img-container">
+          <div
+            className="rental-img-container"
+            onClick={() => history.push(`/instruments/${rental.Instrument.id}`)}
+          >
             <img src={rental.Instrument.Images[0].imgSrc} />
           </div>
           <div className="rental-name-container">

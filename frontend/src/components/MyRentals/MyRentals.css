@@ -25,11 +25,20 @@
   border-radius: 17px;
 }
 
+.rental-img-container:hover {
+  opacity: .7;
+}
+
 .rental-img-container {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .rental-name-container {
