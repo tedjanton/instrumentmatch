@@ -20,7 +20,7 @@ const ReviewForm = () => {
     dispatch(getOneInstrument(instrumentId));
   }, [dispatch])
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const submission = {
       userId,
@@ -28,8 +28,8 @@ const ReviewForm = () => {
       review: comment,
       rating: parseInt(rating, 10)
     }
-    dispatch(postReview(submission))
-    history.push(`/instruments/${instrumentId}`)
+    await dispatch(postReview(submission))
+    return history.push(`/instruments/${instrumentId}`)
   }
 
   return (
