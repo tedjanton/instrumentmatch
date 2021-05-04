@@ -152,11 +152,14 @@
   margin: 5% 5%;
 }
 
+.review-instrument-details-container {
+  max-width: 500px;
+}
+
 .review-instrument-title {
   text-align: center;
   padding-bottom: 1.5em;
 }
-
 
 .review-instrument-img img {
   width: 100%;
