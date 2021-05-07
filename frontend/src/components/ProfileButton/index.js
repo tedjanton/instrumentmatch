@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
-  const instruments = useSelector(state => state.instruments.instruments)
+  const history = useHistory();
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {
@@ -15,14 +15,21 @@ const ProfileButton = ({ user }) => {
     setShowMenu(true);
   };
 
+  const toRentals = () => {
+    setShowMenu(false);
+    return history.push("/myrentals")
+  }
+
   let sessionLinks;
   if (user) {
     sessionLinks = (
       <>
         <li className="nav-li-dropdown">Welcome, {user.username}!</li>
         <li className="nav-li-dropdown">{user.email}</li>
-        <li className="nav-li-dropdown myrentals">
-         <Link onClick={() => setShowMenu(false)} to="/myrentals">My Rentals</Link>
+        <li
+          className="nav-li-dropdown myrentals"
+          onClick={toRentals}>My Rentals
+         {/* <Link onClick={() => setShowMenu(false)} to="/myrentals">My Rentals</Link> */}
         </li>
         <span className="line"></span>
       </>
@@ -54,7 +61,6 @@ const ProfileButton = ({ user }) => {
     setShowMenu(false);
     dispatch(sessionActions.logout());
   }
-
 
   return (
     <>

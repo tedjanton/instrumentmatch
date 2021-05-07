@@ -21,7 +21,6 @@ const SearchBar = () => {
     }
   })
 
-
   const onSubmit = async (e) => {
     e.preventDefault();
     let lowQuery = query.toLowerCase()
