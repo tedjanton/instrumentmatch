@@ -22,7 +22,7 @@ const SearchBar = () => {
   })
 
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     let lowQuery = query.toLowerCase()
     let found = []
@@ -40,7 +40,8 @@ const SearchBar = () => {
         found.push(item.id);
       }
     })
-    dispatch(findInstruments(found));
+    await dispatch(findInstruments(found));
+    setQuery("");
     history.push("/instruments");
   }
 
@@ -52,7 +53,7 @@ const SearchBar = () => {
             className="search-input"
             type="text"
             value={query}
-            placeholder="Start your search"
+            placeholder='Try "Chicago" or "woodwind"...'
             onChange={(e) => setQuery(e.target.value)}
           >
           </input>
