@@ -196,7 +196,6 @@ li#close-menu button:hover {
 }
 
 footer {
-  margin-top: 5%;
   bottom: 0;
   display: flex;
   justify-content: space-between;

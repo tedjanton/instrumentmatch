@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-left: 3%;
-  height: 600px;
+  height: 87.5vh;
   overflow-y: scroll;
 }
 
@@ -47,12 +47,12 @@
 .instrument-component-container {
   display: grid;
   align-items: center;
-  margin: 2% 5% 2% 0;
+  margin: 0 5% 0 0;
   grid-gap: 5px;
   grid-template-columns: 1fr .5fr 1fr .5fr;
   grid-template-rows: repeat(4, 1fr);
   height: 200px;
-  padding: 2.75em 0 1em 0;
+  padding: 1em 0 1em 0;
   border-top: thin solid rgba(0, 0, 0, 0.1);
 }
 

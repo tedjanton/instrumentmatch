@@ -31,8 +31,8 @@ const MapContainer = ({ locations }) => {
   }
 
   const mapStyles = {
-    height: "600px",
-    width: "500px"
+    height: "87.5vh",
+    width: "45vw"
   };
 
   let mapCenter;
