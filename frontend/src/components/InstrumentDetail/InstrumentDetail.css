@@ -26,8 +26,9 @@ h2 {
 
 .idp-details-family,
 .idp-serviced {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: 6% 94%;
 }
 
 .idp-details-family {
