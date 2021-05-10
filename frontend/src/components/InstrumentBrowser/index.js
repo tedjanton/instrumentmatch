@@ -1,30 +1,22 @@
 import MapContainer from "../MapContainer";
 import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as instrumentActions from "../../store/instrument";
 import InstrumentComponent from "./InstrumentComponent";
-import calcRating from "../../utils";
 import "./InstrumentBrowser.css";
 
 const InstrumentBrowser = () => {
   const dispatch = useDispatch();
-  const instrumentState = useSelector(state => state.instruments.instruments);
   const searchQuery = useSelector(state => state.search.search)
   let locations = [];
 
-  let searched = searchQuery?.map(query => query.instrument)
-  let instruments;
-  if (searched) {
-    instruments = searched
-  } else {
-    instruments = instrumentState;
-  }
+  useEffect(() => {
+    dispatch(instrumentActions.getInstruments());
+  }, [])
+
+  let instruments = searchQuery?.map(query => query.instrument)
 
   instruments?.forEach(instrument => {
-    const allRatings = instrument.Reviews.map(review => review.rating);
-    const avgRating = calcRating(allRatings);
-
     let location = {
       id: instrument.id,
       name: instrument.name,
@@ -39,19 +31,23 @@ const InstrumentBrowser = () => {
     locations.push(location);
   });
 
-  useEffect(() => {
-    dispatch(instrumentActions.getInstruments());
-  }, [])
-
   return (
     <div className="instrument-browser-container">
       <div className="instrument-grid-container">
         <div className="instrument-grid-title">
           <h3>Instruments to rent near you.</h3>
         </div>
-        {locations.map(location => (
-          <InstrumentComponent key={location.id} instrument={location} />
-        ))}
+        {instruments?.length ? (
+          <>
+            {locations.map(location => (
+              <InstrumentComponent key={location.id} instrument={location} />
+            ))}
+          </>
+        ) : (
+          <div className="instrument-grid-none-found">
+            <h2>No instruments found. Please try again!</h2>
+          </div>
+        )}
       </div>
       <div className="instrument-map-container">
         <MapContainer locations={locations}/>

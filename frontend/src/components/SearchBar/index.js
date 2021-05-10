@@ -52,6 +52,7 @@ const SearchBar = () => {
             className="search-input"
             type="text"
             value={query}
+            required={true}
             placeholder='Try "Chicago" or "woodwind"...'
             onChange={(e) => setQuery(e.target.value)}
           >

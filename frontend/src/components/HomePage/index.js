@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as instrumentActions from "../../store/instrument"
 import Featured from "./Featured";
 import "./HomePage.css";
+import { findInstruments } from "../../store/search";
 
 const HomePage = () => {
   const history = useHistory();
@@ -14,7 +15,13 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(instrumentActions.getInstruments());
-  }, [])
+  }, []);
+
+  const handleExplore = async () => {
+    let allInstruments = instruments.map(instr => instr.id);
+    await dispatch(findInstruments(allInstruments));
+    return history.push("/instruments");
+  }
 
   return (
     <>
@@ -24,7 +31,7 @@ const HomePage = () => {
         </div>
         <div className="home-explore-container">
           <button
-            onClick={() => history.push("/instruments")}
+            onClick={handleExplore}
             className="home-explore-button">
               Explore nearby instruments
           </button>
