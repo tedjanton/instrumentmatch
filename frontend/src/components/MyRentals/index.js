@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { deleteItem, getInstruments, getOneInstrument } from "../../store/instrument";
+import { Modal } from '../../context/Modal';
 import { findMyRentals } from "../../store/rentals";
+import { getRentalDate } from "../../utils";
 import "./MyRentals.css";
 
 const MyRentals = () => {
@@ -12,6 +14,8 @@ const MyRentals = () => {
   const instruments = useSelector(state => state.instruments.instruments);
   const myRentals = useSelector(state => state.rentals.myRentals);
   const [selectedRental, setSelectedRental] = useState(null);
+  const [toDelete, setToDelete] = useState();
+  const [showModal, setShowModal] = useState(false);
 
   let rentalDetails = [];
   myRentals?.forEach(rental => {
@@ -29,8 +33,6 @@ const MyRentals = () => {
     }
   }, [myRentals])
 
-
-
   useEffect(() => {
     if (selectedRental) {
       dispatch(deleteItem(selectedRental));
@@ -44,38 +46,6 @@ const MyRentals = () => {
     dispatch(findMyRentals(sessionUser.id));
     dispatch(getInstruments());
   }, [dispatch]);
-
-  const getRentalDate = (startStr, endStr) => {
-    const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ];
-    let startDate = new Date(startStr);
-    let startDay = startDate.getDate();
-    let startMonth = monthNames[startDate.getMonth()]
-    let startYear = startDate.getFullYear();
-
-    let endDate = new Date(endStr);
-    let endDay = endDate.getDate();
-    let endMonth = monthNames[endDate.getMonth()];
-    let endYear = startDate.getFullYear();
-
-    if (endYear === startYear) {
-      return `${startMonth} ${startDay} to ${endMonth} ${endDay}, ${endYear}`;
-    } else {
-      return `${startMonth} ${startDay}, ${startYear} to ${endMonth} ${endDay}, ${endYear}`;
-    }
-  }
 
   const currDate = new Date().toJSON().slice(0, 10);
 
@@ -98,10 +68,13 @@ const MyRentals = () => {
       return (
         <button
           className="rental-cancel-button"
-          onClick={(e) => {
-            window.confirm("Are you sure you want to cancel?")
-            setSelectedRental(rental.id)}}
-          >Cancel Rental
+          // onClick={(e) => {
+          //   window.confirm("Are you sure you want to cancel?")
+          //   setSelectedRental(rental.id)}}
+          //
+          onClick={() => {
+            setShowModal(true)
+            setToDelete(rental.id)}}>Cancel Rental
         </button>
       )
     } else {
@@ -144,6 +117,22 @@ const MyRentals = () => {
         </div>
       ))}
       </div>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <div className="rental-modal">
+            <h2>Are you sure you would like to cancel this rental?</h2>
+            <div className="rental-buttons">
+              <button
+                onClick={() => setShowModal(false)}
+                className="rental-buttons-cancel">No
+              </button>
+              <button
+                onClick={() => setSelectedRental(toDelete)}
+                className="rental-buttons-confirm">Yes</button>
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   )
 }

@@ -28,6 +28,38 @@ export const getIcon = (instrument) => {
   return icon;
 }
 
+export const getRentalDate = (startStr, endStr) => {
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let startDate = new Date(startStr);
+  let startDay = startDate.getDate();
+  let startMonth = monthNames[startDate.getMonth()]
+  let startYear = startDate.getFullYear();
+
+  let endDate = new Date(endStr);
+  let endDay = endDate.getDate();
+  let endMonth = monthNames[endDate.getMonth()];
+  let endYear = startDate.getFullYear();
+
+  if (endYear === startYear) {
+    return `${startMonth} ${startDay} to ${endMonth} ${endDay}, ${endYear}`;
+  } else {
+    return `${startMonth} ${startDay}, ${startYear} to ${endMonth} ${endDay}, ${endYear}`;
+  }
+}
+
 const calcRating = (ratings) => {
   let total = 0;
   ratings.forEach(rating => {
@@ -39,5 +71,7 @@ const calcRating = (ratings) => {
   let parsed = Number(fixed);
   return  parsed;
 }
+
+
 
 export default calcRating;

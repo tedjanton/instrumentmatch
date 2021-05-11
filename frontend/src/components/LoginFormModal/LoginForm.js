@@ -20,10 +20,12 @@ const LoginForm = ({ setShowMenu }) => {
     })
   }
 
+  console.log(setShowMenu);
+
   const onSubmitGuest = (e) => {
     e.preventDefault();
     setErrors([]);
-    setShowMenu(false);
+    if (setShowMenu) setShowMenu(false);
     return dispatch(sessionActions.login({
       credential: "demo@user.io",
       password: "password"
@@ -37,7 +39,7 @@ const LoginForm = ({ setShowMenu }) => {
     <div className="login-page-wrapper">
       <div id="login-formContent">
         <form onSubmit={onSubmit} className="login-form-wrapper">
-        <h2 className="login-h2">Log In</h2>
+        <h2 className="login-h2">{setShowMenu ? "log in" : "log in to book rental"}</h2>
           <div className="login-errors">
             <ul className="login-ul">
               {errors.map((error) => (

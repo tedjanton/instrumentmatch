@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { isWithinInterval } from "date-fns";
-import { postRental } from "../../store/instrument";
 import Calendar from "react-calendar";
+import { Modal } from '../../context/Modal';
+import LoginForm from "../LoginFormModal/LoginForm";
+import { postRental } from "../../store/instrument";
+import { getRentalDate } from "../../utils";
 import 'react-calendar/dist/Calendar.css';
 import note from "../../images/music-note.svg";
 import "./InstrumentDetail.css";
-import { useHistory } from "react-router-dom";
 
 
 const CalendarComponent = ({ instrument, currRating, ratings }) => {
   const [value, onChange] = useState("");
   const [showCal, setShowCal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -40,30 +44,43 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
   const openCal = () => {
     if (showCal) return;
     setShowCal(true);
-  }
+  };
 
-  const onClick = async (e) => {
-    e.preventDefault();
-
-    if (!sessionUser) {
-      alert("Please log in or sign up to book a rental!");
-      window.location.reload();
-    };
-
+  const confirmRental = async () => {
     const rental = {
       userId: sessionUser.id,
       instrumentId: instrument.id,
       rentalStartDate: value[0],
       rentalEndDate: value[1]
     };
+    setShowCal(false);
+    await dispatch(postRental(rental));
+    return history.push("/myrentals");
+  }
 
-    if (sessionUser) {
-      window.confirm("Are you sure you would like to book this rental?")
-      setShowCal(false);
-      await dispatch(postRental(rental));
-      return history.push("/myrentals");
-    }
-
+  let rentalWarning;
+  if (!sessionUser) {
+    rentalWarning = (
+      <>
+        <LoginForm />
+      </>
+    )
+  } else {
+    rentalWarning = (
+    <div className="rental-modal">
+      <h2>{`Are you sure you would like to book this rental from ${getRentalDate(value[0], value[1])}?`}</h2>
+      <div className="rental-buttons">
+        <button
+          onClick={() => setShowModal(false)}
+          className="rental-buttons-cancel">Cancel
+        </button>
+        <button
+          onClick={confirmRental}
+          className="rental-buttons-confirm">Confirm Rental
+        </button>
+      </div>
+    </div>
+    )
   }
 
   let calComponent;
@@ -74,7 +91,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
           <button
             id="confirm-cal-button"
             value={value}
-            onClick={onClick}>Confirm Rental</button>
+            onClick={() => setShowModal(true)}>Confirm Rental</button>
         </div>
         <Calendar
           onChange={onChange}
@@ -129,6 +146,11 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
       <div id="cal">
         {calComponent}
       </div>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          {rentalWarning}
+        </Modal>
+      )}
     </div>
   )
 }
