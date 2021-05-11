@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { deleteItem, getInstruments, getOneInstrument } from "../../store/instrument";
 import { findMyRentals } from "../../store/rentals";
+import { getRentalDate } from "../../utils";
 import "./MyRentals.css";
 
 const MyRentals = () => {
@@ -44,38 +45,6 @@ const MyRentals = () => {
     dispatch(findMyRentals(sessionUser.id));
     dispatch(getInstruments());
   }, [dispatch]);
-
-  const getRentalDate = (startStr, endStr) => {
-    const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ];
-    let startDate = new Date(startStr);
-    let startDay = startDate.getDate();
-    let startMonth = monthNames[startDate.getMonth()]
-    let startYear = startDate.getFullYear();
-
-    let endDate = new Date(endStr);
-    let endDay = endDate.getDate();
-    let endMonth = monthNames[endDate.getMonth()];
-    let endYear = startDate.getFullYear();
-
-    if (endYear === startYear) {
-      return `${startMonth} ${startDay} to ${endMonth} ${endDay}, ${endYear}`;
-    } else {
-      return `${startMonth} ${startDay}, ${startYear} to ${endMonth} ${endDay}, ${endYear}`;
-    }
-  }
 
   const currDate = new Date().toJSON().slice(0, 10);
 
