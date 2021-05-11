@@ -1,7 +1,7 @@
 import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-require("dotenv").config();
+// require("dotenv").config();
 
 const MapContainer = ({ locations }) => {
   const [selectedMarker, setSelectedMarker] = useState({});
