@@ -1,18 +1,14 @@
+import { useContext } from "react";
+import { useSelector } from "react-redux";
+import SearchContext from "../../context/Search";
 import MapContainer from "../MapContainer";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import * as instrumentActions from "../../store/instrument";
 import InstrumentComponent from "./InstrumentComponent";
 import "./InstrumentBrowser.css";
 
 const InstrumentBrowser = () => {
-  const dispatch = useDispatch();
-  const searchQuery = useSelector(state => state.search.search)
+  const searchQuery = useSelector(state => state.search.search);
+  const { isSearching } = useContext(SearchContext);
   let locations = [];
-
-  useEffect(() => {
-    dispatch(instrumentActions.getInstruments());
-  }, [])
 
   let instruments = searchQuery?.map(query => query.instrument)
 
@@ -37,16 +33,24 @@ const InstrumentBrowser = () => {
         <div className="instrument-grid-title">
           <h3>Instruments to rent near you.</h3>
         </div>
-        {instruments?.length ? (
-          <>
-            {locations.map(location => (
-              <InstrumentComponent key={location.id} instrument={location} />
-            ))}
-          </>
-        ) : (
-          <div className="instrument-grid-none-found">
-            <h2>No instruments found. Please try again!</h2>
+        {isSearching ? (
+          <div className="loader">
+            <div className="loader-spinner"></div>
           </div>
+        ) : (
+          <>
+          {instruments?.length ? (
+            <>
+              {locations.map(location => (
+                <InstrumentComponent key={location.id} instrument={location} />
+              ))}
+            </>
+          ) : (
+            <div className="instrument-grid-none-found">
+              <h2>No instruments found. Please try again!</h2>
+            </div>
+          )}
+          </>
         )}
       </div>
       <div className="instrument-map-container">

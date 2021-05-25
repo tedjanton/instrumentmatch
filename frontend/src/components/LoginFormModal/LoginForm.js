@@ -18,9 +18,7 @@ const LoginForm = ({ setShowMenu }) => {
       const data = await res.json();
       if (data && data.errors) setErrors(data.errors);
     })
-  }
-
-  console.log(setShowMenu);
+  };
 
   const onSubmitGuest = (e) => {
     e.preventDefault();

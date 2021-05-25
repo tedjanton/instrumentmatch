@@ -7,7 +7,8 @@ import App from './App';
 import configureStore from "./store";
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from "./store/session";
-import { ModalProvider } from "./context/Modal"
+import { ModalProvider } from "./context/Modal";
+import { SearchProvider } from "./context/Search";
 
 const store = configureStore();
 
@@ -24,7 +25,9 @@ function Root() {
     <Provider store={store}>
       <ModalProvider>
         <BrowserRouter>
-          <App />
+          <SearchProvider>
+            <App />
+          </SearchProvider>
         </BrowserRouter>
       </ModalProvider>
     </Provider>

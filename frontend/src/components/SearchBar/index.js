@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import SearchContext from "../../context/Search";
 import { findInstruments } from "../../store/search";
 import "./Search.css";
 
@@ -9,6 +10,7 @@ const SearchBar = () => {
   const [query, setQuery] = useState("");
   const history = useHistory();
   const dispatch = useDispatch();
+  const { setIsSearching } = useContext(SearchContext);
 
   const searchList = instruments?.map(instrument => {
     return {
@@ -23,6 +25,7 @@ const SearchBar = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setIsSearching(true);
     let lowQuery = query.toLowerCase()
     let found = []
 
@@ -38,10 +41,12 @@ const SearchBar = () => {
       } else if (item.zip.includes(lowQuery)) {
         found.push(item.id);
       }
-    })
-    await dispatch(findInstruments(found));
-    setQuery("");
+    });
+
     history.push("/instruments");
+    setQuery("");
+    await dispatch(findInstruments(found));
+    setIsSearching(false);
   }
 
   return (

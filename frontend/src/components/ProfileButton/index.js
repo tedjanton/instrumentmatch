@@ -29,7 +29,6 @@ const ProfileButton = ({ user }) => {
         <li
           className="nav-li-dropdown myrentals"
           onClick={toRentals}>My Rentals
-         {/* <Link onClick={() => setShowMenu(false)} to="/myrentals">My Rentals</Link> */}
         </li>
         <span className="line"></span>
       </>
