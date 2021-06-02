@@ -11,3 +11,12 @@ body {
 button {
   font-family: 'Montserrat', sans-serif;
 }
+
+input:focus {
+  outline: none;
+  border: none;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}

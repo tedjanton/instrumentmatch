@@ -22,9 +22,14 @@ export function ModalProvider({ children }) {
   );
 }
 
-export function Modal({ onClose, children, setShowModal }) {
+export function Modal({ onClose, children }) {
   const modalNode = useContext(ModalContext);
-  if (!modalNode) return null;
+  const profileDropdown = document.querySelector(".profile-dropdown");
+  if (!modalNode) {
+    return null;
+  } else if (profileDropdown) {
+    document.querySelector(".profile-dropdown").classList.add("hide");
+  }
 
   return ReactDOM.createPortal(
     <div id="modal">

@@ -9,15 +9,15 @@ const LoginForm = ({ setShowMenu }) => {
   const [errors, setErrors] = useState([]);
   const dispatch = useDispatch();
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    setShowMenu(false);
-    return dispatch(sessionActions.login({ credential, password }))
+    await dispatch(sessionActions.login({ credential, password }))
     .catch(async (res) => {
       const data = await res.json();
       if (data && data.errors) setErrors(data.errors);
-    })
+    });
+    if (!errors.length) setShowMenu(false);
   };
 
   const onSubmitGuest = (e) => {

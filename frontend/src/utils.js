@@ -43,15 +43,18 @@ export const getRentalDate = (startStr, endStr) => {
     "November",
     "December"
   ];
-  let startDate = new Date(startStr);
-  let startDay = startDate.getDate();
-  let startMonth = monthNames[startDate.getMonth()]
-  let startYear = startDate.getFullYear();
 
-  let endDate = new Date(endStr);
-  let endDay = endDate.getDate();
-  let endMonth = monthNames[endDate.getMonth()];
-  let endYear = startDate.getFullYear();
+  const start = new Date(startStr);
+  const startDate = new Date(start.valueOf() + start.getTimezoneOffset() * 60000);
+  const startDay = startDate.getDate();
+  const startMonth = monthNames[startDate.getMonth()]
+  const startYear = startDate.getFullYear();
+
+  const end = new Date(endStr);
+  const endDate = new Date(end.valueOf() + end.getTimezoneOffset() * 60000);
+  const endDay = endDate.getDate();
+  const endMonth = monthNames[endDate.getMonth()];
+  const endYear = startDate.getFullYear();
 
   if (endYear === startYear) {
     return `${startMonth} ${startDay} to ${endMonth} ${endDay}, ${endYear}`;
@@ -71,7 +74,5 @@ const calcRating = (ratings) => {
   let parsed = Number(fixed);
   return  parsed;
 }
-
-
 
 export default calcRating;

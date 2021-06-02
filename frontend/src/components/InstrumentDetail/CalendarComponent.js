@@ -28,7 +28,10 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
   ));
 
   function isWithinRange(date, range) {
-    return isWithinInterval(date, { start: range[0], end: range[1] })
+    return isWithinInterval(date, {
+      start: range[0],
+      end: new Date(range[1].valueOf() + range[1].getTimezoneOffset() * 60000)
+    })
   }
 
   function isWithinRanges(date, ranges) {
@@ -53,6 +56,8 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
       rentalStartDate: value[0],
       rentalEndDate: value[1]
     };
+
+    console.log(rental);
     setShowCal(false);
     await dispatch(postRental(rental));
     return history.push("/myrentals");
@@ -68,7 +73,12 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
   } else {
     rentalWarning = (
     <div className="rental-modal">
-      <h2>{`Are you sure you would like to book this rental from ${getRentalDate(value[0], value[1])}?`}</h2>
+      {value[0] && value[1] && (
+        <h2>{`Are you sure you would like to book this rental from ${
+          getRentalDate(value[0], new Date(value[1].valueOf() - value[1].getTimezoneOffset() * 60000))
+        }?`}
+        </h2>
+      )}
       <div className="rental-buttons">
         <button
           onClick={() => setShowModal(false)}
@@ -124,7 +134,7 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
       setShowCal(false);
     })
     return () => document.removeEventListener("click", closeCal)
-  }, [showCal])
+  }, [showCal]);
 
   return (
     <div className="calendar-container">

@@ -91,11 +91,6 @@ body {
   border-radius: 5px 5px 5px 5px;
 }
 
-.signup-input:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #bd921d;
-}
-
 .signup-input:placeholder {
   color: #cccccc;
 }

@@ -11,6 +11,7 @@
     "date-fns": "^2.21.3",
     "immer": "^8.0.4",
     "js-cookie": "^2.2.1",
+    "merge-class-names": "^1.4.0",
     "node-fetch": "^2.6.1",
     "react": "^16.14.0",
     "react-calendar": "^3.3.1",

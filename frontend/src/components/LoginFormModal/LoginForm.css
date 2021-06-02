@@ -104,11 +104,6 @@ body {
   border-radius: 5px 5px 5px 5px;
 }
 
-.login-input:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #966f04;
-}
-
 .login-input:placeholder {
   color: #cccccc;
 }

@@ -36,7 +36,6 @@ const MyRentals = () => {
   useEffect(() => {
     if (selectedRental) {
       dispatch(deleteItem(selectedRental));
-      // history.push("/instruments");
       window.location.reload();
     }
   }, [selectedRental])
@@ -68,10 +67,6 @@ const MyRentals = () => {
       return (
         <button
           className="rental-cancel-button"
-          // onClick={(e) => {
-          //   window.confirm("Are you sure you want to cancel?")
-          //   setSelectedRental(rental.id)}}
-          //
           onClick={() => {
             setShowModal(true)
             setToDelete(rental.id)}}>Cancel Rental

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
@@ -11,7 +11,8 @@ const ProfileButton = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {
-    if (showMenu) return;
+    const hiddenMenu = document.querySelector(".hide");
+    if (hiddenMenu) hiddenMenu.classList.remove("hide");
     setShowMenu(true);
   };
 
@@ -59,6 +60,7 @@ const ProfileButton = ({ user }) => {
     e.preventDefault();
     setShowMenu(false);
     dispatch(sessionActions.logout());
+    history.push("/");
   }
 
   return (

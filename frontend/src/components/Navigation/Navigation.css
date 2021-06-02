@@ -63,6 +63,10 @@ a:link {
   background-color: rgb(228, 228, 228);
 }
 
+.nav-li-dropdown.myrentals {
+  cursor: pointer;
+}
+
 a.loggedout-dropdown {
   padding: 1em;
   font-size: 14px;
@@ -131,6 +135,10 @@ a.loggedout-dropdown {
   font-size: 14px;
   padding: .7em 1em;
   border: none;
+}
+
+.hide {
+  display: none;
 }
 
 .logout-button {
