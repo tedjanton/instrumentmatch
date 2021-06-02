@@ -57,7 +57,6 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
       rentalEndDate: value[1]
     };
 
-    console.log(rental);
     setShowCal(false);
     await dispatch(postRental(rental));
     return history.push("/myrentals");
