@@ -1,14 +1,16 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as instrumentActions from "../../store/instrument"
 import Featured from "./Featured";
 import "./HomePage.css";
 import { findInstruments } from "../../store/search";
+import SearchContext from "../../context/Search";
 
 const HomePage = () => {
-  const history = useHistory();
   const instruments = useSelector(state => state.instruments.instruments);
+  const { setIsSearching } = useContext(SearchContext);
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const featured = instruments?.filter(feature => feature.id < 5);
@@ -18,9 +20,11 @@ const HomePage = () => {
   }, []);
 
   const handleExplore = async () => {
+    setIsSearching(true);
     let allInstruments = instruments.map(instr => instr.id);
+    history.push("/instruments");
     await dispatch(findInstruments(allInstruments));
-    return history.push("/instruments");
+    setIsSearching(false);
   }
 
   return (

@@ -30,7 +30,8 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
   function isWithinRange(date, range) {
     return isWithinInterval(date, {
       start: range[0],
-      end: new Date(range[1].valueOf() + range[1].getTimezoneOffset() * 60000)
+      end: range[1],
+      // end: new Date(range[1].valueOf() + range[1].getTimezoneOffset() * 60000)
     })
   }
 
@@ -74,7 +75,8 @@ const CalendarComponent = ({ instrument, currRating, ratings }) => {
     <div className="rental-modal">
       {value[0] && value[1] && (
         <h2>{`Are you sure you would like to book this rental from ${
-          getRentalDate(value[0], new Date(value[1].valueOf() - value[1].getTimezoneOffset() * 60000))
+          // getRentalDate(value[0], new Date(value[1].valueOf() - value[1].getTimezoneOffset() * 60000))
+          getRentalDate(value[0], value[1])
         }?`}
         </h2>
       )}
