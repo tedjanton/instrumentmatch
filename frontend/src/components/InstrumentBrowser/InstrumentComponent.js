@@ -5,8 +5,12 @@ import { getHover } from "../../store/instrument";
 import calcRating, { getIcon } from "../../utils";
 import note from "../../images/music-note.svg";
 
+/*
+Instrument listing for the search results page
+*/
+
 const InstrumentComponent = ({ instrument }) => {
-  const { id, name, manufacturer, imgSrc, Reviews, Family, pricePerDay, lat, lng } = instrument;
+  const { id, name, manufacturer, imgSrc, Reviews } = instrument;
   const [hover, setHover] = useState(false);
   const [selected, setSelected] = useState("");
   const history = useHistory();

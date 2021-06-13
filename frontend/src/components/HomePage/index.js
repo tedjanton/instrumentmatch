@@ -19,6 +19,7 @@ const HomePage = () => {
     dispatch(instrumentActions.getInstruments());
   }, []);
 
+  // Loads all instruments to the search results page
   const handleExplore = async () => {
     setIsSearching(true);
     let allInstruments = instruments.map(instr => instr.id);

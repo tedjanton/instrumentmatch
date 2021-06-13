@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, Redirect, useHistory } from "react-router-dom";
-import { deleteItem, getInstruments, getOneInstrument } from "../../store/instrument";
+import { Link, useHistory } from "react-router-dom";
+import { deleteItem, getInstruments } from "../../store/instrument";
 import { Modal } from '../../context/Modal';
 import { findMyRentals } from "../../store/rentals";
 import { getRentalDate } from "../../utils";
@@ -28,18 +28,11 @@ const MyRentals = () => {
   });
 
   useEffect(() => {
-    if (myRentals) {
-      return;
-    }
-  }, [myRentals])
-
-  useEffect(() => {
     if (selectedRental) {
       dispatch(deleteItem(selectedRental));
       window.location.reload();
     }
   }, [selectedRental])
-
 
   useEffect(() => {
     dispatch(findMyRentals(sessionUser.id));

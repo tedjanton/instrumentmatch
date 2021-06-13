@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 
+/*
+Displays featured instruments on the Home Page
+*/
+
 const Featured = ({ instrument }) => {
 
   return (

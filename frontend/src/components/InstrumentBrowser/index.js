@@ -5,6 +5,11 @@ import MapContainer from "../MapContainer";
 import InstrumentComponent from "./InstrumentComponent";
 import "./InstrumentBrowser.css";
 
+/*
+Displays instruments found via search and displays the
+Google map
+*/
+
 const InstrumentBrowser = () => {
   const searchQuery = useSelector(state => state.search.search);
   const { isSearching } = useContext(SearchContext);

@@ -1,9 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import SearchContext from "../../context/Search";
+import { getInstruments } from "../../store/instrument";
 import { findInstruments } from "../../store/search";
 import "./Search.css";
+
+/*
+Manages the state of the search query
+*/
 
 const SearchBar = () => {
   const instruments = useSelector(state => state.instruments.instruments);
@@ -12,16 +17,9 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const { setIsSearching } = useContext(SearchContext);
 
-  const searchList = instruments?.map(instrument => {
-    return {
-      id: instrument.id,
-      name: instrument.name,
-      family: instrument.Family.family,
-      city: instrument.city.toLowerCase(),
-      state: instrument.state.toLowerCase(),
-      zip: instrument.zip.toString()
-    }
-  })
+  useEffect(() => {
+    dispatch(getInstruments())
+  }, [])
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +27,18 @@ const SearchBar = () => {
     let lowQuery = query.toLowerCase()
     let found = []
 
-    searchList?.forEach(item => {
+    const searchList = instruments.map(instrument => {
+      return {
+        id: instrument.id,
+        name: instrument.name,
+        family: instrument.Family.family,
+        city: instrument.city.toLowerCase(),
+        state: instrument.state.toLowerCase(),
+        zip: instrument.zip.toString()
+      }
+    });
+
+    searchList.forEach(item => {
       if (item.name.includes(lowQuery)) {
         found.push(item.id);
       } else if (item.family.includes(lowQuery)) {
@@ -47,7 +56,7 @@ const SearchBar = () => {
     setQuery("");
     await dispatch(findInstruments(found));
     setIsSearching(false);
-  }
+  };
 
   return (
     <>
